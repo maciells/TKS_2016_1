@@ -1,0 +1,186 @@
+body{
+	margin: 0;
+	padding: 0;
+	
+}
+
+#topo{
+	
+	width: 100%;
+	height: 10em;
+	float: left;
+}
+
+#logo{
+	
+	width: 100%;
+	height:6em;	
+	margin-left: -0em;
+}
+
+#menu_Horizontal{
+	float: left;
+	width: 100%;
+	height: 4em;
+	margin-top: -0em;
+	margin-left: -0em;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	
+}
+
+ul li{	
+   background-image: url("../img/botaoPintadoAzul.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size:100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	
+    float: left;
+	width: 20%;
+	height: 2.5em;
+	margin-top: 0.5em;
+}
+
+.li{
+	background-image: url("../img/botaoPintadoVermelho.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size:100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	
+    float: left;
+    position: relative;
+	padding-left: 4%;
+	height: 2.5em;
+	width: 20%;
+}	
+
+ul li a {
+	text-decoration: none;
+	display: block;
+	color: white;
+}
+li :hover{
+    text-shadow: 0 0 0.7em white;    
+ }
+
+.slide{
+	width: 100%;
+	height: 15em;
+	float: left;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.imgSlide{
+	width: 100%;
+	height: 15em;
+
+}	
+
+/*------------------------------------------------------------------*/
+
+#cadastro{ /*Botão de cadastro da pagina inicial*/
+	background-image: url("../img/botaoPintadoCadastro.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size:100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 60%;
+	height: 3em;
+	top: 59%;
+	left: 40%;
+	position: absolute;
+	z-index: 2;
+}
+
+#linkCdastro{
+	float: left;
+	color: white;
+	text-decoration: none;
+	font-size: 1.5em;
+	margin-left: 35%;
+	margin-top: 2.5%;
+}	
+
+#linkCdastro:hover{
+	text-shadow: 0 0 0.3em white;
+}
+
+#conteudo{
+	background-color: #FF1347;
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-left: -0em;
+}	
+
+#titulo{
+	width: 70%;
+	height: 5em;
+	float: left;
+	margin-left: 15%;
+	border-bottom: 2px solid white;
+	margin-bottom: 3%;
+}
+
+h1{
+	color: white;
+	text-align: center;
+}	
+
+#imagem{
+	background-image: url("../img/6.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size:100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	
+	width: 80%;
+	height: 15em;
+	float: left;
+	
+	margin-top: 2%;
+	margin-bottom: 5%;
+	margin-left: 10%;
+	border: 5px solid #FCD410;
+}	
+
+#texto{
+	width: 80%;
+	height: auto;
+	float: left;
+	
+	margin-top: 2%;
+	margin-bottom: 5%;
+	margin-left: 10%;
+	color: white;
+}	
+	
+	
+#rodape{
+	width: 100%;
+	height: 6em;
+	float: left;
+	border-top: 20px solid #FCD410;
+	
+}
+
+

@@ -1,0 +1,2122 @@
+@font-face {
+	font-family: 'fonte';
+	src: url(../fonts/KGYouWontBringMeDown.ttf)
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font: normal normal 100%/1.8 "fonte";
+	font-style: normal;
+	font-weight: normal;
+	width: 100%;
+}
+
+/*----------------------------------------------------------Topo do site------------------------------------------------*/
+#topo {
+	width: 100%;
+	float: left;
+}
+
+#logo {
+	background-image: url("../img/logoGif.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	float: left;
+	height: 15.2em;
+	margin-top: 0.8em;
+}
+
+#logoHome {
+	background-image: url("../img/logoGif.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	float: left;
+	width: 30%;
+	height: 12.2em;
+	margin-left: 5%;
+	margin-top: 0.8em;
+}
+
+#menuTopAdm {
+	width: 100%;
+	float: left;
+	font-color: white;
+	font-size: 1.8em;
+	background-color: #FEBE0F;
+	border: 4px solid #FEBE0F;
+	margin: auto;
+	-webkit-box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.75);
+	
+}
+
+.pp {
+	font-weight: bold;
+	font-colot: white;
+}
+
+.pps {
+	border: 4px solid #FEBE0F;
+}
+
+#conteudoAdm {
+	background-color: #EC2148;
+	width: 100%;
+	float: left;
+	
+}
+
+/*Ewhite os links do menu iniciar*/
+.a1 {
+	text-decoration: none;
+	position: relative;
+	float: left;
+	color: white;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding-left: 25%;
+	padding-top: 1%;
+	padding-right: 20%;
+	padding-bottom: 3%;
+}
+
+.a2 {
+	text-decoration: none;
+	position: relative;
+	float: left;
+	color: white;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding-left: 20%;
+	padding-top: 1%;
+	padding-right: 20%;
+	padding-bottom: 3%;
+}
+
+.a3 {
+	text-decoration: none;
+	position: relative;
+	float: left;
+	color: white;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding-left: 15%;
+	padding-top: 1%;
+	padding-right: 20%;
+	padding-bottom: 3%;
+}
+
+.a4 {
+	text-decoration: none;
+	position: relative;
+	float: left;
+	color: white;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding-left: 8%;
+	padding-top: 1%;
+	padding-right: 20%;
+	padding-bottom: 3%;
+}
+
+.a5 {
+	text-decoration: none;
+	position: relative;
+	float: left;
+	color: white;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding-left: 15%;
+	padding-top: 1%;
+	padding-right: 20%;
+	padding-bottom: 3%;
+}
+
+/*fim do Edita os links do menu iniciar*/
+/*----------------------------------------------------------fim do topo---------------------------------------------------------------------------*/
+
+/*---------------------------------menu vertical------------------------------------*/
+#botaoMenuVertical {
+	min-width: 2.5%;
+	min-height: 2.5em;
+	position: fixed;
+	top: 20.3em;
+	background-image: url("../img/atalhoMenu.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-webkit-transition: 0.2s ease-in;
+	-moz-transition: 0.2s ease-in;
+	-o-transition: 0.2s ease-in;
+	transition: 0.2s ease-in;
+}
+
+#botaoMenuVertical:hover {
+	height: 100%;
+	width: 12%;
+	top: 0em;
+	bottom: 0em;
+	background-color: white;
+	border: 3px solid #FEBE0F;
+	-webkit-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	-moz-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+}
+
+#menuVertical {
+	width: 100%;
+	height: 100%;
+	display: none;
+	-webkit-transition: width 0.2s ease-in;
+	-moz-transition: width 0.2s ease-in;
+	-o-transition: width 0.2s ease-in;
+	transition: width 0.2s ease-in;
+}
+
+#botaoMenuVertical:hover  #menuVertical {
+	display: block;
+	margin-top: 20em;
+}
+
+#menuVertical ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	margin-top: 5%;
+}
+
+#menuVertical ul li {
+	background-image: url("../img/botaoPintadoAzul.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	height: 2em;
+	width: 90%;
+	position: relative;
+	margin-bottom: 5%;
+	margin-left: 5%;
+	float: left;
+}
+
+#menuVertical .li {
+	/*deixa o botao vermelho na pagina que eata no momento*/
+	background-image: url("../img/botaoPintadoVermelho.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	float: left;
+	position: relative;
+	height: 2em;
+	width: 90%;
+	margin-left: 5%;
+}
+
+#menuVertical ul li:hover {
+	background-image: url("../img/botaoPintadoVermelho.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	height: 2em;
+	width: 90%;
+	margin-left: 5%;
+	position: relative;
+	float: left;
+}
+
+/*Aqui começa o efeito drop down do menu*/
+#menuVertical li ul { /*edita a ul que vai fazer o efeito drop down*/
+	position: absolute;
+	width: 100%;
+	height: auto;
+	margin-top: 0%;
+	margin-left: 100%;
+	background-color: white;
+	border: 3px solid #FEBE0F;
+	display: none; /*Aqui esconde a UL para começar o efeito drop down */
+	-webkit-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	-moz-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+}
+
+#menuVertical ul li:hover>ul {
+	/*Aqui faz mostrar a UL com os outros links*/
+	display: block;
+}
+
+/*Aqui termina o efeito drop down do menu*/
+#menuVertical ul li ul li { /*estas sao as li do menu drop down*/
+	background-image: url("../img/botaoPintadoAzul.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	height: 2em;
+	width: 90%;
+	position: relative;
+	float: left;
+	margin-left: 5%;
+	margin-bottom: 3%;
+	margin-top: 3%;
+}
+
+#menuVertical ul li ul li:hover {
+	background-image: url("../img/botaoPintadoVermelho.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	height: 2em;
+	width: 90%;
+	position: relative;
+	float: left;
+	margin-left: 5%;
+	margin-bottom: 3%;
+	margin-top: 3%;
+}
+
+/*---------------------------------fim do menu verticla------------------------------------*/
+
+/*---------------------------------------------------------slide da area aberta---------------------------------------------------------------*/
+#slide {
+	width: 100%;
+	height: 41.8em;
+	float: left;
+	z-index: 2;
+	background-color: #EC2148;
+}
+
+.slide {
+	width: 90%;
+	height: 33.8em;
+	float: left;
+	margin-left: 4.5%;
+	margin-top: 4em;
+	border: 5px solid #FEBE0F;
+	overflow: hidden;
+	z-index: 2;
+	background-color: white;
+	-webkit-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	-moz-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+}
+
+.imgSlide {
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+}
+
+#esq { /*seta dos slides*/
+	background-image: url("../img/setaSlideEsquerdaBranca.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 3%;
+	height: 2em;
+	position: absolute;
+	margin-top: 20em;
+	margin-left: 1%;
+	z-index: 1;
+	cursor: pointer;
+}
+
+#dir { /*seta dos slides*/
+	background-image: url("../img/setaSlideDireitaBranca.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 3%;
+	height: 2em;
+	position: absolute;
+	margin-top: 20em;
+	margin-left: 96%;
+	z-index: 1;
+	cursor: pointer;
+}
+
+#esq:hover { /*seta dos slides*/
+	background-image: url("../img/setaSlideEsquerdaAmarela.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 3%;
+	height: 2em;
+	position: absolute;
+	margin-top: 13em;
+	margin-left: 1%;
+	z-index: 1;
+	cursor: pointer;
+}
+
+#dir:hover { /*seta dos slides*/
+	background-image: url("../img/setaSlideDireitaAmarela.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 3%;
+	height: 2em;
+	position: absolute;
+	margin-top: 13em;
+	margin-left: 96%;
+	z-index: 1;
+	cursor: pointer;
+}
+
+/*--------------------------------------------------------------------fim slide----------------------------------------------------------------*/
+
+/*---------------------------------------------------------- --------Conteudos---------------------------------------------------------------*/
+#container {
+	width: 100%;
+	height: auto;
+	margin: auto;
+}
+
+#containerV {
+	width: 100%;
+	height: auto;
+	margin: auto;
+	background-color: #EC2148;
+}
+
+#conteudo {
+	width: 100%;
+	height: auto;
+	float: left;
+	z-index: 1;
+}
+
+#conteudoV {
+	width: 100%;
+	height: auto;
+	float: left;
+	background-color: #EC2148;
+}
+
+/*div que contem a imagem dos titulos das paginas*/
+#imgTituloDaPagina {
+	width: 100%;
+	height: 3em;
+	float: left;
+	margin-top: 2%;
+}
+
+#divImagemTituloPagina {
+	width: 3.5%;
+	height: 3em;
+	margin: 0 auto;
+}
+
+#imgTp {
+	height: 100%;
+	float: left;
+}
+/*fim da div que contem a imagem dos titulos das paginas*/
+#titulo { /*Estiliza todo titulo das paginas*/
+	width: 100%;
+	height: 3em;
+	float: left;
+	margin-bottom: 5%;
+	text-align: center;
+}
+
+h1 { /*h1 dos titulos das paginas*/
+	color: white;
+	font-size: 3em;
+	font-family: fonte;
+	margin: 0;
+	padding: 0;
+}
+
+/*---------------------------------------------------------------- rodape---------------------------------------------------------------*/
+#rodape {
+	width: 100%;
+	height: 13em;
+	float: left;
+	border-top: 20px solid #FEBE0F;
+	background-color: white;
+	z-index: 1;
+}
+
+#relacionamento { /*  div dos icones dos app de relacionamentos */
+	width: auto;
+	margin-left: 30.3%;
+	margin-top: 2%;
+}
+
+#facebook {
+	background-image: url("../img/botaoFacebookAzul.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10%;
+	height: 2em;
+	float: left;
+	margin-left: 1%;
+}
+
+#facebook:hover {
+	background-image: url("../img/botaoFacebookVermelho.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10%;
+	height: 2em;
+	float: left;
+	margin-left: 1%;
+}
+
+#twiter {
+	background-image: url("../img/botaoTwiterAzul.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10%;
+	height: 2em;
+	float: left;
+	margin-left: 1%;
+}
+
+#twiter:hover {
+	background-image: url("../img/botaoTwiterVermelho.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10%;
+	height: 2em;
+	float: left;
+	margin-left: 1%;
+}
+
+#instagram {
+	background-image: url("../img/botaoInstagramAzul.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10%;
+	height: 2em;
+	float: left;
+	margin-left: 1%;
+}
+
+#instagram:hover {
+	background-image: url("../img/botaoInstagramVermelho.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10%;
+	height: 2em;
+	float: left;
+	margin-left: 1%;
+}
+
+#skype {
+	background-image: url("../img/botaoSkypeAzul.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10%;
+	height: 2em;
+	float: left;
+	margin-left: 1%;
+}
+
+#skype:hover {
+	background-image: url("../img/botaoSkypeVermelho.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10%;
+	height: 2em;
+	float: left;
+	margin-left: 1%;
+}
+
+#whatsapp {
+	background-image: url("../img/botaoWhatsappAzul.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10%;
+	height: 2em;
+	float: left;
+	margin-left: 1%;
+}
+
+#whatsapp:hover {
+	background-image: url("../img/botaoWhatsappVermelho.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10%;
+	height: 2em;
+	float: left;
+	margin-left: 1%;
+}
+
+/*------------------------------------------------------------fim do rodape---------------------------------------------------------------*/
+
+/*-----------------------------------------------Quem somos------------------------------------------------------------------------------*/
+#imgLapisQuemSomos1 {
+	background-image: url("../img/lapisDeitadoVerde.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 22%;
+	height: 4em;
+	position: absolute;
+	margin-top: -3.2em;
+	margin-left: 8em;
+}
+
+#imgGloboQuemSomos {
+	background-image: url("../img/globo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 15%;
+	height: 11em;
+	position: absolute;
+	margin-top: -10.7em;
+	margin-left: 60%;
+}
+
+#imgQuemSomos {
+	background-image: url("../img/iconeQuemSomos.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 8%;
+	height: 7em;
+	float: left;
+	margin-left: 46%;
+	margin-top: 3%;
+}
+
+#dv1 {
+	width: 95%;
+	height: 25em;
+	float: left;
+	margin-left: 5%;
+}
+
+#dv2 {
+	width: 95%;
+	height: 25em;
+	float: left;
+	margin-left: 5%;
+}
+
+#textoQs1 {
+	width: 45%;
+	height: 20em;
+	float: left;
+	text-align: justify;
+	color: white;
+	margin-left: 5%;
+	font-size: 1.2em;
+	font-family: Comic Sans, Comic Sans MS, cursive;
+}
+
+#textoQs2 {
+	width: 45%;
+	height: 20em;
+	float: left;
+	text-align: justify;
+	color: white;
+	font-size: 1.2em;
+	font-family: Comic Sans, Comic Sans MS, cursive;
+}
+
+#imagemQs1 {
+	background-image: url("../img/cG.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 43.5%;
+	height: 20em;
+	float: left;
+	border: 5px solid #FEBE0F;
+	-webkit-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	-moz-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+}
+
+#imagemQs2 {
+	background-image: url("../img/coruja.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 43.5%;
+	height: 20em;
+	float: left;
+	border: 5px solid #FEBE0F;
+	margin-left: 5%;
+	-webkit-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	-moz-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+}
+
+/*-------------------------------------------fim Quem somos------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/*-----------------Edita  todos os  formularios -----------------*/
+#formulario { /*div que abriga o formulario*/
+	
+	height: auto;
+	
+	margin-bottom: 4%;
+	font-size: 1.4em;
+	background-color: white;
+	color: #006383;
+	-webkit-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	-moz-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	border: 5px solid #FEBE0F;
+}
+
+.linha {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+
+.formEnviaDados { /*div que abriga os botoes do formulario*/
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-bottom: 5%;
+	margin-top: 5%;
+}
+
+.formEnviaDados1 { /*div que abriga os botoes do formulario*/
+	width: 70%;
+	height: auto;
+	float: left;
+	margin-left: 15%;
+	margin-bottom: 5%;
+	margin-top: 5%;
+}
+
+.formDados1 { /*Div com os inputs do formulario*/
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-top: 5%;
+	color: #006182;
+}
+
+/*Edita os formularios das paginas da area aberta*/
+.legendaDados {
+	width: 98%;
+	height: auto;
+	float: left;
+	margin-bottom: 3%;
+	margin-top: 3%;
+	margin-left: 2%;
+	font-size: 1.6em;
+	font-weight: bold;
+	color: #006182;
+}
+
+.atributosInput { /*div com os nomes de cada campo input*/
+	width: 28%;
+	height: auto;
+	float: left;
+	margin-left: 2%;
+	margin-bottom: 2%;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #006182;
+}
+
+.textoFormulario {
+	width: 70%;
+	height: auto;
+	float: left;
+	margin-bottom: 2%;
+	font-family: none;
+}
+
+.input1 { /*Edita os campos dos inputs da area aberta*/
+	width: 90%;
+	height: 1.5em;
+	border: 3px solid;
+	border-image: url("../img/botaoPintadoAzul.png") 28 stretch;
+}
+
+.input2 { /*Edita os campos dos inputs da area aberta*/
+	width: 40%;
+	height: 1.5em;
+	border: 3px solid;
+	border-image: url("../img/botaoPintadoAzul.png") 28 stretch;
+}
+
+.input4 { /*Edita os campos dos inputs da area aberta*/
+	width: 20%;
+	height: 1.5em;
+	border: 3px solid;
+	border-image: url("../img/botaoPintadoAzul.png") 28 stretch;
+}
+
+.input5 { /*Edita os campos dos inputs da area aberta*/
+	width: 90%;
+	height: 5em;
+	border: 3px solid;
+	border-image: url("../img/botaoPintadoAzul.png") 28 stretch;
+}
+
+.input6 { /*Edita os campos dos inputs da area aberta*/
+	width: 90%;
+	height: 1.5em;
+	border: none;
+	background-color: white;
+}
+
+#enviarDados { /*div com as imagens dos botoes dos formularios*/
+	background-image: url("../img/botaoPintadoAzul.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 20%;
+	height: 2.5em;
+	float: left;
+	margin-left: 30%;
+}
+
+#limparDados { /*div com as imagens dos botoes dos formularios*/
+	background-image: url("../img/botaoPintadoAzul.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 20%;
+	height: 2.5em;
+	float: left;
+}
+
+
+
+
+/*-----------------------------------------------------------*/
+
+/*-------------Botão que busca o cep------------------*/
+.buttomCep {
+	border: none;
+	background-color: transparent;
+	/*------------------------------------*/
+	background-image: url("../img/botaoPintadoAzul.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	/*------------------------------------*/
+	width: 17%;
+	height: 2em;
+	padding-left: 0%;
+	font-family: fonte;
+	font-size: 1em;
+	font-weight: bold;
+	color: white;
+}
+/*-----------------------------------------------------------------------*/
+.buttomCep:hover {
+	border: none;
+	background-color: transparent;
+	/*------------------------------------*/
+	background-image: url("../img/botaoPintadoVermelho.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	/*------------------------------------*/
+	cursor: pointer;
+	width: 17%;
+	height: 2em;
+	padding-left: 0%;
+	text-shadow: 0 0 0.3em white;
+	font-family: fonte;
+	font-size: 1em;
+	font-weight: bold;
+	color: white;
+}
+
+.botaoFormulario1 {
+	border: none;
+	background-color: transparent;
+	/*-----------------------------------------------------------------------*/
+	color: white;
+	padding-left: 18%;
+	padding-right: 25%;
+	padding-left: 25%;
+	padding-top: 3%;
+	/*edita a fonte dos inputs type submit e reset*/
+	font-family: fonte;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+/*-------------------------------*/
+/*quando passar o mouse por cima do botao do formulario ele 
+            fica como o curso em formade de mao e as letras destacadas*/
+.botaoFormulario1:hover {
+	cursor: pointer;
+	text-shadow: 0 0 0.3em white;
+}
+
+.botaoFormulario { /*edita os inputs SUBMIT E RESET*/
+	/* este trecho tira a borda e a cor que vem com input type submit e reset*/
+	border: none;
+	background-color: transparent;
+	/*-----------------------------------------------------------------------*/
+	color: white;
+	padding-left: 18%;
+	padding-right: 25%;
+	padding-top: 3%;
+	/*edita a fonte dos inputs type submit e reset*/
+	font-family: fonte;
+	font-size: 1em;
+	font-weight: bold;
+	/*--------------------------------------------*/
+}
+/*-------------------------------*/
+/*quando passar o mouse por cima do botao do formulario ele 
+            fica como o curso em formade de mao e as letras destacadas*/
+.botaoFormulario:hover {
+	cursor: pointer;
+	text-shadow: 0 0 0.3em white;
+}
+/*------------------------------------------------------*/
+#enviarDados:hover {
+	/*quando passar o mouse por cima do botao do formulario ele fica vermelho*/
+	background-image: url("../img/botaoPintadoVermelho.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 20%;
+	height: 2.5em;
+	float: left;
+	margin-left: 30%;
+}
+
+#limparDados:hover {
+	/*quando passar o mouse por cima do botao do formulario ele fica vermelho*/
+	background-image: url("../img/botaoPintadoVermelho.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 20%;
+	height: 2.5em;
+	float: left;
+}
+
+/*fim do Edita os formularios das paginas da area aberta*/
+#divTexto { /*mensagem que vai ao lado do formulario de contato*/
+	width: 42.5%;
+	height: auto;
+	float: left;
+	margin-bottom: 4%;
+	margin-left: 5%;
+	color: white;
+	font-size: 1.2em;
+	font-family: Comic Sans, Comic Sans MS, cursive;
+}
+
+#divTexto1 { /*mensagem que vai ao lado do formulario de contato*/
+	width: 42.5%;
+	height: auto;
+	float: left;
+	margin-bottom: 4%;
+	margin-left: 5%;
+	color: white;
+	font-size: 1.2em;
+	font-family: Comic Sans, Comic Sans MS, cursive;
+}
+
+.subtitulo {
+	/*titulo que vai em cima dos textos ao lodo dos formularios*/
+	text-align: center;
+	font-family: fonte;
+	font-size: 1.4em;
+}
+
+/*-------- estiliza as bordas das tabelas------------*/
+#formulario1 { /*div que abriga o formulario*/
+	width: 90%;
+	height: auto;
+	float: left;
+	margin-bottom: 4%;
+	margin-left: 4.5%;
+	background-color: white;
+	border: 5px solid #FEBE0F;
+	-webkit-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	-moz-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+}
+
+
+
+.larguraId {
+	width: 10%;
+	border: 3px solid;
+	border-image: url("../img/botaoPintadoAzul.png") 28 stretch;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.larguraNome {
+	width: 60%;
+	border: 3px solid;
+	border-image: url("../img/botaoPintadoAzul.png") 28 stretch;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.larguraNome1 {
+	width: 70%;
+	border: 3px solid;
+	border-image: url("../img/botaoPintadoAzul.png") 28 stretch;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.larguraBotao {
+	width: 10%;
+	border: 3px solid;
+	border-image: url("../img/botaoPintadoAzul.png") 28 stretch;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.larguraIdSb {
+	width: 10%;
+	font-family: none;
+	padding-left: 1%;
+	font-size: 1em;
+}
+
+.larguraNomeSb {
+	width: 60%;
+	font-family: none;
+	padding-left: 1%;
+	font-size: 1em;
+}
+
+.larguraBotaoSb {
+	width: 40%;
+	background-color: transparent;
+	background-image: url("../img/botaoPintadoAzul.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	border: none;
+	color: white;
+	text-decoration: none;
+}
+
+.larguraBotaoSb:hover {
+	width: 40%;
+	background-color: transparent;
+	background-image: url("../img/botaoPintadoVermelho.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	color: white;
+	text-decoration: none;
+}
+
+tr.linhaTabela:hover {
+	background-color: #DCDCDC;
+}
+/*-----
+--mensagem que aparece quando voce faz o cadastro com sucesso-		
+---*/
+
+/*--------------fim Edita os 3  formularios  contato, mensagem, cadastro da area aberta---------------*/
+
+/*-----------------------------------------------login------------------------------------------------------------------------------*/
+#hugoLogin {
+	background-image: url("../img/hugoSentadoGif.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10em;
+	height: 15em;
+	position: absolute;
+	margin-top: -12em;
+	margin-left: 27%;
+}
+
+/*----------------------------------------------fim login------------------------------------------------------------------------------*/
+
+/*----------------------------------------------Contato--------------------------------------------*/
+#hugoContato {
+	background-image: url("../img/hugoSentadoGif.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10em;
+	height: 15em;
+	position: absolute;
+	margin-top: -12em;
+	margin-left: 27%;
+}
+
+/*-----------------------------------------------fim Contato-----------------------------------------------------------------------------*/
+
+/*----------------------------------------------Cadastro---------------------------------------------------------------------------------*/
+#hugoCadastro {
+	background-image: url("../img/hugoSentadoGif.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10em;
+	height: 15em;
+	position: absolute;
+	margin-top: -12em;
+	margin-left: 27%;
+}
+
+/*-------------------------------------------fim Cadastro---------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------Metodologia-----------*/
+.metodologia {
+	width: 42.5%;
+	height: auto;
+	float: left;
+	margin-left: 5%;
+	margin-bottom: 2%;
+	color: white;
+}
+
+.textoMetodologia {
+	font-size: 1.2em;
+	font-family: Comic Sans, Comic Sans MS, cursive;
+	text-align: justify;
+}
+
+.subtituloM {
+	font-size: 1.4em;
+	text-align: center;
+}
+/*--------------------------------------------------fim Metodologia---*/
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*------------------------------Home do Estudante-----------------------------------*/
+
+/*------------------------------Topo-----------------------------------*/
+#nomeUsuario {
+	width: 20%;
+	height: 3em;
+	float: left;
+	margin-left: 40%;
+	color: #006084;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+#saudacao {
+	float: left;
+	margin: 0 auto;
+	width: 40%;
+	margin-top: 8%;
+	text-align: center;
+}
+
+#nome {
+	float: left;
+	margin: 0 auto;
+	width: 60%;
+	margin-top: 8%;
+	text-align: center;
+}
+
+#menu_Horizontal_Estudante {
+	float: left;
+	margin-top: 2.7%;
+	width: 64%;
+	z-index: 999;
+}
+/*------------------------------fim Topo-----------------------------------*/
+#containerEstudante {
+	width: 100%;
+	height: auto;
+	float: left;
+	background-color: #EC2148;
+	z-index: 1;
+}
+
+#conteudoEstudante {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+
+/*------------------------------Home do Estudante-----------------------------------*/
+#propagandaEstudante {
+	width: 42%;
+	height: 20em;
+	float: left;
+	border: 5px solid #FEBE0F;
+	margin-top: 5%;
+	margin-bottom: 4%;
+	margin-left: 5%;
+	-webkit-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	-moz-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+}
+
+#imgPropaganda {
+	width: 100%;
+	height: 100%;
+}
+
+/*------------------------------fim Home do Estudante-----------------------------------*/
+
+/*------------------------------Dados do Estudante--------------------------------------*/
+#luminariaDadosEstudante {
+	background-image: url("../img/luminariaVerde.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 14%;
+	height: 38em;
+	position: absolute;
+	margin-top: -0.1%;
+	margin-left: 20%;
+}
+
+#hugoDadosEstudante {
+	background-image: url("../img/hugoSentado1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10em;
+	height: 15em;
+	position: absolute;
+	margin-top: -12em;
+	margin-left: 27%;
+}
+
+#GloboDesempenhoEstudante {
+	background-image: url("../img/globo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 15%;
+	height: 11em;
+	position: absolute;
+	margin-top: 66.7%;
+	margin-left: 18%;
+}
+
+#GloboDadosEstudante {
+	background-image: url("../img/globo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 15%;
+	height: 11em;
+	position: absolute;
+	margin-top: 122.8%;
+	margin-left: 18%;
+}
+
+/*------------------------------fim Dados do Estudante-----------------------------------*/
+
+/*------------------------------ Contato do Estudante-----------------------------------*/
+#hugoContatoEstudante {
+	background-image: url("../img/hugoSentadoPc.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10em;
+	height: 15em;
+	position: absolute;
+	margin-top: -12em;
+	margin-left: 27%;
+}
+
+#lapisVerdeContatoEstudante {
+	background-image: url("../img/lapisDeitadoVerde.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 20%;
+	height: 4em;
+	position: absolute;
+	margin-top: 9.2%;
+	margin-left: 70%;
+}
+
+/*------------------------------Contato do Estudante-----------------------------------*/
+
+/*------------------------------   conteudo Miniatura do Estudante   -----------------------------------*/
+#containerVideoAulas {
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-bottom: 4%;
+}
+
+#pilhaLivrosAula {
+	background-image: url("../img/pilhaLivros1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 12%;
+	height: 8em;
+	position: absolute;
+	margin-top: -8.2em;
+	margin-left: 5%;
+}
+
+#hugoVideoAula {
+	background-image: url("../img/hugoSentado1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10em;
+	height: 15em;
+	position: absolute;
+	margin-top: -12em;
+	margin-left: 27%;
+}
+
+.conteudosMiniatura {
+	width: 42%;
+	height: auto;
+	float: left;
+	margin-bottom: 4%;
+	margin-left: 5%;
+	border: 5px solid #FEBE0F;
+	-webkit-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	-moz-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+}
+
+.tituloVideoAulas {
+	background-color: #FEBE0F;
+	width: 100%;
+	height: auto;
+	text-align: center;
+	font-size: 1.6em;
+	font-weight: bold;
+	color: blue;
+	float: left;
+}
+
+.divImgVideoAulas { /*div dos videos*/
+	width: 100%;
+	height: 15em;
+	float: left;
+}
+
+.imgVideoAula {
+	width: 100%;
+	height: 100%;
+}
+
+.conteudosMiniatura:hover {
+	/*esta linha é a que deixa as divs dos conteudos opacas */
+	border: 5px solid #006381;
+}
+
+.conteudosMiniatura:hover  .tituloVideoAulas {
+	/*esta linha é a que deixa as divs dos conteudos opacas */
+	background-color: #006381;
+	color: white;
+}
+
+#botaoProximoEanteriorEstudante {
+	width: 20%;
+	height: 2.5em;
+	float: left;
+	margin-left: 44%;
+}
+
+.btProximoAnterior {
+	padding-left: 100%;
+	padding-bottom: 30%;
+}
+
+#proximo { /*Botao*/
+	background-image: url("../img/setaDireitaBranca.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 20%;
+	height: 2.5em;
+	float: left;
+	margin-left: 20%;
+}
+
+#anterior:hover { /*Botao*/
+	background-image: url("../img/setaEsquerdaAmarela.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 20%;
+	height: 2.5em;
+	float: left;
+}
+
+#proximo:hover { /*Botao*/
+	background-image: url("../img/setaDireitaAmarela.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 20%;
+	height: 2.5em;
+	float: left;
+	margin-left: 20%;
+}
+
+#anterior { /*Botao*/
+	background-image: url("../img/setaEsquerdaBranca.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 20%;
+	height: 2.5em;
+	float: left;
+}
+
+/*------------------------------   fim conteudo miniatura do Estudante   -----------------------------------*/
+
+/*------------------------------    video aulas  -----------------------------------*/
+#divVideoAula {
+	width: 70%;
+	height: 25em;
+	float: left;
+	border: 5px solid #FEBE0F;
+	margin-bottom: 4%;
+	margin-left: 5%;
+	-webkit-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	-moz-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+}
+
+#hugoAula {
+	background-image: url("../img/hugoSentado1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10em;
+	height: 15em;
+	position: absolute;
+	margin-top: -12em;
+	margin-left: 57%;
+}
+
+#pilhaLivrosVideoAula {
+	background-image: url("../img/pilhaLivros1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 12%;
+	height: 8em;
+	position: absolute;
+	margin-top: -8em;
+	margin-left: 10%;
+}
+
+/*botao aula comcluida*/
+#divBotaoAulaConcluida {
+	width: 15%;
+	height: 3em;
+	float: left;
+	cursor: pointer;
+	margin-left: 4.5%;
+	border: 4px solid;
+	border-image: url("../img/botaoPintadoBranco.png") 28 stretch;
+}
+
+#divImgVisto {
+	background-image: url("../img/iconeVistoP.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 2%;
+	height: 1.7em;
+	margin-left: 1%;
+	margin-top: 0.7%;
+	position: absolute;
+}
+
+#divBotaoAulaConcluida:hover {
+	width: 15%;
+	height: 3em;
+	float: left;
+	cursor: pointer;
+	margin-left: 4.5%;
+	border: 4px solid;
+	border-image: url("../img/botaoPintadoAmarelo.png") 28 stretch;
+}
+
+#divBotaoAulaConcluida:hover #divImgVisto {
+	background-image: url("../img/iconeVistoPamarelo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 2%;
+	height: 1.7em;
+	margin-left: 1%;
+	margin-top: 0.7%;
+	position: absolute;
+}
+
+#textoBotaoVideoAula {
+	margin: 0 auto;
+	font-size: 1.4em;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	padding-top: 3%;
+}
+
+#divBotaoAulaConcluida:hover #textoBotaoVideoAula {
+	color: #FEBE0F;
+	margin: 0 auto;
+	font-size: 1.4em;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 3%;
+}
+
+#divTextoAula {
+	margin: 0;
+	width: 70%;
+	height: auto;
+	float: left;
+	margin-bottom: 4%;
+	margin-left: 5%;
+	color: white;
+	font-size: 1.3em;
+	font-weight: bold;
+	text-align: justify;
+}
+
+#tituloTextoAula {
+	margin: 0;
+	padding: 0;
+}
+/*fim do botao aula comcluida*/
+
+/*material de apoio*/
+#divImgMaterial {
+	background-image: url("../img/iconeArquivoP.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 2%;
+	height: 1.7em;
+	margin-left: 1%;
+	margin-top: 0.7%;
+	position: absolute;
+}
+
+#divdownloadMaterial:hover #divImgMaterial {
+	background-image: url("../img/iconeArquivoPamarelo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 2%;
+	height: 1.7em;
+	margin-left: 1%;
+	margin-top: 0.7%;
+	position: absolute;
+}
+
+#materialApoio {
+	width: 15%;
+	height: auto;
+	float: left;
+	color: white;
+	margin-left: 5%;
+	margin-top: 5%;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+#tituloMaterialApoio {
+	text-align: center;
+	float: left;
+	font-size: 1.4em;
+}
+
+#divdownloadMaterial {
+	width: 15%;
+	height: 3em;
+	float: left;
+	cursor: pointer;
+	margin-left: 4.5%;
+	border: 4px solid;
+	border-image: url("../img/botaoPintadoBranco.png") 28 stretch;
+}
+
+#divdownloadMaterial:hover {
+	width: 15%;
+	height: 3em;
+	float: left;
+	cursor: pointer;
+	margin-left: 4.5%;
+	border: 4px solid;
+	border-image: url("../img/botaoPintadoAmarelo.png") 28 stretch;
+}
+
+#textoDownload {
+	margin: 0 auto;
+	font-size: 1.4em;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	padding-top: 3%;
+}
+
+#divdownloadMaterial:hover #textoDownload {
+	font-size: 1.4em;
+	font-weight: bold;
+	color: #FEBE0F;
+}
+/*fim material de apoio*/
+#poteLapis {
+	background-image: url("../img/relogio.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 15%;
+	height: 18em;
+	position: absolute;
+	margin-top: -18em;
+	margin-left: 80%;
+	z-index: 999;
+}
+
+/*------------------------------   fim das video aulas   -----------------------------------*/
+
+/*------------------------------  div Jogos    -----------------------------------*/
+#lapisJogos {
+	background-image: url("../img/lapisDeitadoRoxo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 20%;
+	height: 4em;
+	position: absolute;
+	margin-top: -3.7em;
+	margin-left: 10%;
+}
+
+#hugoJogos {
+	background-image: url("../img/hugoSentado1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10em;
+	height: 15em;
+	position: absolute;
+	margin-top: -12em;
+	margin-left: 27%;
+}
+
+#containerJogos {
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-bottom: 4%;
+}
+
+.conteudoJogos {
+	width: 42%;
+	height: auto;
+	float: left;
+	margin-bottom: 4%;
+	margin-left: 5%;
+	border: 5px solid #FEBE0F;
+	-webkit-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	-moz-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+}
+
+.divImgJogos {
+	width: 100%;
+	height: 15em;
+	float: left;
+}
+
+.conteudoJogos:hover {
+	border: 5px solid #006381;
+}
+
+.imgJogos {
+	width: 100%;
+	height: 100%;
+}
+
+.tituloJogos {
+	background-color: #FEBE0F;
+	width: 100%;
+	height: auto;
+	text-align: center;
+	font-size: 1.6em;
+	font-weight: bold;
+	color: blue;
+	float: left;
+}
+
+.conteudoJogos:hover  .tituloJogos {
+	background-color: #006381;
+	color: white;
+}
+
+/*------------------------------ fim da  div Jogos    -----------------------------------*/
+
+/*------------------------------  div Dicionario    -----------------------------------*/
+#lapisDicionario {
+	background-image: url("../img/lapisDeitadoVerde.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 20%;
+	height: 4em;
+	position: absolute;
+	margin-top: -3.7em;
+	margin-left: 10%;
+}
+
+#pilhaLivrosDicionario {
+	background-image: url("../img/pilhaLivros2.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 12%;
+	height: 8em;
+	position: absolute;
+	margin-top: -8.2em;
+	margin-left: 27%;
+}
+
+#containerDicionario {
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-bottom: 4%;
+}
+
+.conteudoDicionario {
+	width: 42%;
+	height: auto;
+	float: left;
+	margin-bottom: 4%;
+	margin-left: 5%;
+	border: 5px solid #FEBE0F;
+	-webkit-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	-moz-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+}
+
+.diviImgDicionario {
+	width: 100%;
+	height: 15em;
+	float: left;
+}
+
+.conteudoDicionario:hover {
+	border: 5px solid #006381;
+}
+
+.imgDicionario {
+	width: 100%;
+	height: 100%;
+}
+
+.tituloDicionario {
+	background-color: #FEBE0F;
+	width: 100%;
+	height: auto;
+	text-align: center;
+	font-size: 1.6em;
+	font-weight: bold;
+	color: blue;
+	float: left;
+}
+
+.conteudoDicionario:hover  .tituloDicionario {
+	background-color: #006381;
+	color: white;
+}
+
+/*------------------------------ fim da  div dicionarios    -----------------------------------*/
+
+/*------------------------------   Chat   -----------------------------------*/
+#DivChat {
+	width: 90%;
+	height: auto;
+	float: left;
+	border: 5px solid #FEBE0F;
+	margin-bottom: 4%;
+	margin-left: 5%;
+	background-color: black;
+	color: #006383;
+	-webkit-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	-moz-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+	box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
+}
+
+#chat {
+	width: 99.8%;
+	height: 25.9em;
+	margin-bottom: -0.7%;
+}
+
+#lapisVerdeChat {
+	background-image: url("../img/lapisDeitadoVerde.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 20%;
+	height: 4em;
+	position: absolute;
+	margin-top: -3.8em;
+	margin-left: 10%;
+}
+
+#hugoChat {
+	background-image: url("../img/hugoSentadoPc.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10em;
+	height: 15em;
+	position: absolute;
+	margin-top: -12em;
+	margin-left: 75%;
+}
+
+/*------------------------------fim chat  -----------------------------------*/
+
+/*------------------------------Grupo WhasApp-----------------------------------*/
+#hugoWhatsapp {
+	background-image: url("../img/hugoSentadoPc.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10em;
+	height: 15em;
+	position: absolute;
+	margin-top: -12em;
+	margin-left: 27%;
+}
+
+#lapisVerdeWhatsapp {
+	background-image: url("../img/lapisDeitadoVerde.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 20%;
+	height: 4em;
+	position: absolute;
+	margin-top: -3.7em;
+	margin-left: 5%;
+}
+
+/*--------------------------fim Grupo WhasApp-----------------------------------*/
+
+/*------------------------------Skype-----------------------------------*/
+#hugoSkype {
+	background-image: url("../img/hugoSentadoPc.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 10em;
+	height: 15em;
+	position: absolute;
+	margin-top: -12em;
+	margin-left: 27%;
+}
+
+#lapisVerdeSkype {
+	background-image: url("../img/lapisDeitadoAzul.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	width: 20%;
+	height: 4em;
+	position: absolute;
+	margin-top: -3.7em;
+	margin-left: 5%;
+}
+
+/*--------------------------fim Skype-----------------------------------*/
