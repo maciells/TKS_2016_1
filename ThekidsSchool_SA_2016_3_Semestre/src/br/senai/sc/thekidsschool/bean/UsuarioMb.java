@@ -9,14 +9,13 @@ import javax.faces.event.ComponentSystemEvent;
 import br.senai.sc.thekidsschool.model.Usuario;
 import br.senai.sc.thekidsschool.rn.UsuarioRN;
 
-
-
-	@ManagedBean
+@ManagedBean
 public class UsuarioMb {
 		private Usuario usuario;
 		private UsuarioRN usuarioRN;
 		private Long editarId;
 		private List<Usuario> listaUsuarios;
+		private List<Usuario> listaProfessores;
 
 		@PostConstruct
 		public void depoisDeConstruir() {
@@ -70,6 +69,15 @@ public class UsuarioMb {
 			usuarioRN.salvar(usuario);
 			listaUsuarios = null;
 			return "/listarUsuario";
+		}
+		
+		
+		
+		public List<Usuario> getListaProfessores(){
+			if(listaProfessores == null){
+				listaProfessores = usuarioRN.listaProfessores();
+			}
+			return listaProfessores;
 		}
 
 	}

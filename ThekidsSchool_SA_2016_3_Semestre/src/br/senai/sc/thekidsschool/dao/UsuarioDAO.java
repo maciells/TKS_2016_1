@@ -5,7 +5,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import br.senai.sc.thekidsschool.model.Perfil;
 import br.senai.sc.thekidsschool.model.Usuario;
+
 import br.senai.sc.thekidsschool.commons.JpaUtil;
 
 
@@ -34,6 +36,13 @@ public class UsuarioDAO {
 	private EntityManager getEM() {
 		EntityManager em = JpaUtil.getEntityManager();
 		return em;
+	}
+
+	public List<Usuario> listarProfessores() {
+		Query query = getEM().createQuery("From Usuario u Where u.perfil = :perfil", Usuario.class);
+		query.setParameter("perfil", Perfil.PROFESSOR);
+		
+		return query.getResultList();
 	}
 
 

@@ -5,11 +5,11 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-
 <f:metadata>
 	<f:viewParam name="id" value="#{turmaMb.editarId}" />
-	<f:event listener="#{turmaMb.carregarUsuario}" type="preRenderView" />
+	<f:event listener="#{turmaMb.carregarTurma}" type="preRenderView" />
 </f:metadata>
+
 
 <ui:composition template="/WEB-INF/template/padrao.xhtml">
 	<ui:define name="conteudo">
@@ -20,7 +20,7 @@
 		</div>
 
 		<div id="titulo">
-			<h1>Cadastro de Alunos TKS</h1>
+			<h1>Cadastro de Turmas TKS</h1>
 		</div>
 
 		<div class="col-xs-12 col-sm-1"></div>
@@ -28,177 +28,34 @@
 			<h:form>
 
 				<div class="col-xs-12 col-sm-6">
-					<h:panelGroup rendered="#{not empty usuarioMb.usuario.id}">
+					<h:panelGroup rendered="#{not empty turmaMb.turma.id}">
 						<div class="form-group id">
-							<label for="exampleId">ID</label>
+							<label>ID</label>
 							<h:inputText styleClass="form-control" readonly="true"
-								value="#{usuarioMb.usuario.id}" id="exampleId" />
+								value="#{turmaMb.turma.id}" />
 						</div>
 					</h:panelGroup>
-					<h:inputHidden value="#{usuarioMb.usuario.id}" />
+					<h:inputHidden value="#{turmaMb.turma.id}" />
 					
 					<div class="form-group">
-						<label for="exampleInputPerfil">Perfil</label>
-						<h:selectOneMenu styleClass="form-control"
-							value="#{usuarioMb.usuario.perfil}">
-							<f:selectItem itemLabel="-" itemValue="" />
-							<f:selectItem itemLabel="Administrador" itemValue="ADMINISTRADOR" />
-							<f:selectItem itemLabel="Professor" itemValue="PROFESSOR" />
-							<f:selectItem itemLabel="Aluno" itemValue="ALUNO" />
-						</h:selectOneMenu>
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputDataInscricao">Data de Inscrição</label>
+						<label for="exampleInputNome">Nome da turma:</label>
 						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.dataInscricao }"
-							id="exampleInputDataInscricao" />
+							value="#{turmaMb.turma.nomeTurma }" id="exampleInputNome" />
 					</div>
-
+					
 					<div class="form-group">
-						<label for="exampleInputNome">Nome:</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.nome }" id="exampleInputNome" />
-					</div>
-
-
-					<div class="form-group">
-						<label for="exampleInputIdade">Idade</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.idade }" id="exampleInputIdade" />
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputSexo">Sexo</label>
-						<h:selectOneRadio value="#{usuarioMb.usuario.sexo}"
-							id="exampleInputSexo">
-							<div>
-								<f:selectItem itemValue="m" itemLabel="Masculino" />
-							</div>
-							<div>
-								<f:selectItem itemValue="f" itemLabel="Feminino" />
-							</div>
-						</h:selectOneRadio>
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputDataNascimento">Data de Nascimento</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.dataNascimento }"
-							id="exampleInputDataNascimento" />
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputNomeMae">Nome da Mãe</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.nomeMae }" id="exampleInputNomeMae" />
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputNomePai">Nome do Pai</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.nomePai }" id="exampleInputNomePai" />
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputCpf">CPF</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.cpf }" id="exampleInputCpf" />
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputRg">RG</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.rg }" id="exampleInputRg" />
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputEmail">Email address</label>
-						<h:inputText styleClass="form-control" id="exampleInputEmail"
-							value="#{usuarioMb.usuario.email}" />
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputTelefone">Telefone</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.telefone }" id="exampleInputTelefone" />
-					</div>
+					<label>Professor</label>
+					<h:selectOneMenu styleClass="form-control" value="#{turmaMb.turma.professor}">
+						<f:selectItem itemLabel="-" />
+						<f:selectItems value="#{usuarioMb.listaProfessores}" var="professor" 
+							itemLabel="#{professor.nome}" itemValue="#{professor}" />
+					</h:selectOneMenu>
 				</div>
-
-
-				<div class="col-xs-12 col-sm-6">
-					<div class="form-group">
-						<label for="exampleInputTipoLogradouro"> Tipo de
-							logradouro</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.tipoLogradouro }"
-							id="exampleInputTipoLogradouro" />
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputNomeLogradouro">Logradouro</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.nomeLogradouro }"
-							id="exampleInputNomeLogradouro" />
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputNumero">Numero</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.numero }" id="exampleInputNumero" />
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputNomeBairro">Bairro</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.nomeBairro }"
-							id="exampleInputNomeBairro" />
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputNomeCidade">Cidade</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.nomeCidade }"
-							id="exampleInputNomeCidade" />
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputSiglaEstado"> UF</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.siglaEstado }"
-							id="exampleInputSiglaEstado" />
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputNomeEstado">Estado</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.nomeEstado }"
-							id="exampleInputNomeEstado" />
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputCep">CEP</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.cep }" id="exampleInputCep" />
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputSenha">Senha</label>
-						<h:inputSecret styleClass="form-control" id="exampleInputSenha"
-							value="#{usuarioMb.usuario.senha}" />
-					</div>
-
-					<div class="form-group">
-						<label for="exampleInputRepitaSenha">Repita a Senha</label>
-						<h:inputSecret styleClass="form-control"
-							id="exampleInputRepitaSenha"
-							value="#{usuarioMb.usuario.repitaSenha}" />
-					</div>
-
+					
 					<button type="reset" class="larguraBotaoSb">Restaurar</button>
 
-					<h:commandButton action="#{usuarioMb.salvar}" value="Salvar"
-						class="larguraBotaoSb" />
+					<h:commandButton action="#{turmaMb.salvar}" value="Salvar" styleClass="larguraBotaoSb"
+						/>
 				</div>
 			</h:form>
 		</div>

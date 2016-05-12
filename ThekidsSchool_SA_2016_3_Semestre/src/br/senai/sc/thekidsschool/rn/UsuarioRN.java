@@ -31,4 +31,8 @@ public class UsuarioRN {
 		dao.excluir(id);
 	}
 
+	public List<Usuario> listaProfessores() {
+		return dao.listarProfessores();
+	}
+
 }

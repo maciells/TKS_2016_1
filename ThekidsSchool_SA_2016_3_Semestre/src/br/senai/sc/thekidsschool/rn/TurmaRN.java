@@ -16,7 +16,21 @@ public class TurmaRN {
 	}
 	
 	public List<Turma> listar() {
-		return dao.listar();
+		return dao.listarTurma();
+	}
+
+	public void excluir(Long id) {
+		dao.excluir(id);
+		
+	}
+
+	public void salvar(Turma turma) {
+		dao.salvar(turma);
+		
+	}
+
+	public Turma buscarPorId(Long id) {
+		return dao.buscarPorId(id);
 	}
 
 }

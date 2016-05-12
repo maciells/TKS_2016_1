@@ -12,7 +12,7 @@ public class Turma {
 	
 	private Long id;
 	private String nomeTurma;
-	private Usuario usuario;
+	private Usuario professor;
 	
 	
 	@Id
@@ -29,13 +29,16 @@ public class Turma {
 	public void setNomeTurma(String nomeTurma) {
 		this.nomeTurma = nomeTurma;
 	}
+	
 	@ManyToOne
-	public Usuario getUsuario() {
-		return usuario;
+	public Usuario getProfessor() {
+		return professor;
 	}
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setProfessor(Usuario professor) {
+		this.professor = professor;
 	}
+	
+	
 	
 	
 	
