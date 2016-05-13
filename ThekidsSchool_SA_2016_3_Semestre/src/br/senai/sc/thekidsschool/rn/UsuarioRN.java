@@ -35,4 +35,14 @@ public class UsuarioRN {
 		return dao.listarProfessores();
 	}
 
+	public List<Usuario> listaAdministrador() {
+		// TODO Auto-generated method stub
+		return dao.listarAdministrador();
+	}
+
+	public List<Usuario> listaAluno() {
+		// TODO Auto-generated method stub
+		return dao.lisarAluno();
+	}
+
 }

@@ -44,6 +44,18 @@ public class UsuarioDAO {
 		
 		return query.getResultList();
 	}
+	
+	public List<Usuario> listarAdministrador() {
+		Query query = getEM().createQuery("From Usuario u Where u.perfil = :perfil", Usuario.class);
+		query.setParameter("perfil", Perfil.ADMINISTRADOR);
+		
+		return query.getResultList();
+	}
 
-
+	public List<Usuario> lisarAluno() {
+		Query query = getEM().createQuery("From Usuario u Where u.perfil = :perfil", Usuario.class);
+		query.setParameter("perfil", Perfil.ALUNO);
+		
+		return query.getResultList();
+	}
 }
