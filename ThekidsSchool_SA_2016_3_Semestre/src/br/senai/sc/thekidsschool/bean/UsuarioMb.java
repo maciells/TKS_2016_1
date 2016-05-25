@@ -5,10 +5,10 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.event.ComponentSystemEvent;
-
 import br.senai.sc.thekidsschool.model.Perfil;
 import br.senai.sc.thekidsschool.model.Usuario;
 import br.senai.sc.thekidsschool.rn.UsuarioRN;
+
 
 @ManagedBean
 public class UsuarioMb {

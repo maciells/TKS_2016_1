@@ -7,9 +7,8 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 <f:metadata>
 	<f:viewParam name="id" value="#{turmaMb.editarId}" />
-	<f:event listener="#{turmaMb.carregarTurma}" type="preRenderView" />
+	<f:event listener="#{turmaMb.carregarEdicao}" type="preRenderView" />
 </f:metadata>
-
 
 <ui:composition template="/WEB-INF/template/padrao.xhtml">
 	<ui:define name="conteudo">
@@ -18,9 +17,10 @@
 				<h:graphicImage value="/resources/img/iconeCadastro.png" id="imgTp" />
 			</div>
 		</div>
-
 		<div id="titulo">
-			<h1>Cadastro de Turmas TKS</h1>
+			<h1>
+			Cadastro de Turmas TKS
+			</h1>
 		</div>
 
 		<div class="col-xs-12 col-sm-1"></div>
@@ -45,22 +45,103 @@
 					
 					<div class="form-group">
 					<label>Professor</label>
-					<h:selectOneMenu styleClass="form-control" value="#{turmaMb.turma.professor}">
+					<h:selectOneMenu styleClass="form-control" 
+					value="#{turmaMb.turma.professor}">
 						<f:selectItem itemLabel="-" />
 						<f:selectItems value="#{usuarioMb.listaProfessores}" var="professor" 
 							itemLabel="#{professor.nome}" itemValue="#{professor}" />
 					</h:selectOneMenu>
 				</div>
+				
+				
+			  	<fieldset>
+				<legend>Aluno</legend>
+				<div class="row">
+					<div class="col-sm-9">
+						<h:selectOneMenu id="uiSelecionaAluno" styleClass="form-control"
+							value="#{turmaMb.alunoSelecionado}">
+							<f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+							<f:selectItems value="#{usuarioMb.listaUsuarios}" var="alu"
+								itemLabel="#{alu.nome}" itemValue="#{alu}" />
+						</h:selectOneMenu>
+					</div>
 					
-					<button type="reset" class="larguraBotaoSb">Restaurar</button>
+					<div class="col-sm-3">
+						<h:commandLink styleClass="btn btn-success">
+							<f:ajax event="click" execute="uiSelecionaAluno"
+								listener="#{turmaMb.adicionarAluno}"
+								render="uiAlunoTurma uiSelecionaAluno" />
+							<span class="glyphicon glyphicon-plus"></span>
+						</h:commandLink>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-12">
+						<h:dataTable styleClass="table-condensed table-hover"
+							id="uiAlunosTurma" value="#{turmaMb.turma.alunosTurma}"
+							var="aluno">
+							
+							<h:column>
+								<f:facet name="header">Nome</f:facet>
+								<h:outputText value="#{aluno.nome}" />
+							</h:column>
+							
+							<h:column>
+								<f:facet name="header">controle</f:facet>
+								<h:commandLink>
+									<f:attribute name="idAluno" value="#{aluno}" />
+									<f:ajax event="click" execute="@form" render="@form"
+									listener="#{turmaMb.excluirAluno}"/>
+									<span class="glyphicon glyphicon-remove-circle"></span>
+								</h:commandLink> 
+							</h:column>
+							
+						</h:dataTable>
+					</div>	
+				</div>
+			</fieldset>
 
-					<h:commandButton action="#{turmaMb.salvar}" value="Salvar" styleClass="larguraBotaoSb"
+			<div class="form-group">
+				<label>Inicio</label>
+				<div class='input-group date datetimepicker'>
+					<h:inputText styleClass="form-control"
+						value="#{turmaMb.turma.inicio}">
+						<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+					</h:inputText>
+					<span class="input-group-addon"> <span
+						class="glyphicon glyphicon-calendar"></span>
+					</span>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label>Termino</label>
+				<div class="input-group date datetimepicker">
+					<h:inputText styleClass="form-control"
+						value="#{turmaMb.turma.termino}">
+						<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+					</h:inputText>
+					<span class="input-group-addon"> <span
+						class="glyphicon glyphicon-calendar"></span>
+					</span>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label>Valor</label>
+				<h:inputText styleClass="form-control"
+					value="#{turmaMb.turma.valor}" />
+			</div>
+			
+			
+					<button type="reset" class="larguraBotaoSb">Restaurar</button>
+					<h:commandButton action="#{turmaMb.salvar}" value="Salvar" 
+					styleClass="larguraBotaoSb"
 						/>
 				</div>
 			</h:form>
 		</div>
 	</ui:define>
-
 </ui:composition>
-
 </html>

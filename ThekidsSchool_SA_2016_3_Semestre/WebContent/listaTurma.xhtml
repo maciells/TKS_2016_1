@@ -8,56 +8,59 @@
 
 <ui:composition template="/WEB-INF/template/padrao.xhtml">
 	<ui:define name="conteudo">
-
-		<div id="imgTituloDaPagina">
-			<div id="divImagemTituloPagina" class="animated bounceInLeft">
-				<h:graphicImage value="/resources/img/iconeDicionarios.png"
-					id="imgTp" />
-			</div>
+		<div class="page-header">
+			<h1>Turma</h1>
+			
+			<h:link outcome="/cadastroTurma" styleClass="btn btn-success">
+				<span class="glyphicon glyphicon-plus"></span>
+			</h:link>
+			<h:messages />
+			<h:dataTable styleClass="table" value="#{turmaMb.listaTurma}"
+				var="turma">
+				
+				<h:column>
+					<f:facet name="header">ID</f:facet>
+					<h:outputText value="#{turma.id}" />
+				</h:column>
+				
+			    <h:column>
+					<f:facet name="header">Destino</f:facet>
+					<h:outputText value="#{turma.nomeTurma}" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Inicio</f:facet>
+					<h:outputText value="#{turma.inicio}">
+						<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+					</h:outputText>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Termino</f:facet>
+					<h:outputText value="#{escursao.termino}">
+						<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+					</h:outputText>
+					
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Valor</f:facet>
+					<h:outputText value="#{turma.valor}" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Professor</f:facet>
+					<h:outputText value="#{turma.professor.nome}" />
+				</h:column>
+				
+				<h:column>
+					<h:link styleClass="btn btn-default" outcome="/turma"
+						value="Editar">
+						<f:param name="id" value="#{turma.id}" />
+					</h:link>
+				</h:column>
+			</h:dataTable>
 		</div>
-
-		<div id="titulo">
-			<h1>Lista de Turmas TKS</h1>
-		</div>
-
-		<div class="col-xs-12 col-sm-1"></div>
-		<div class="col-xs-12 col-sm-10" id="formulario">
-			<h:form>
-				<h:dataTable value="#{turmaMb.listaTurma}" var="user"
-					styleClass="table">
-					<f:facet name="header">Turma</f:facet>
-					<h:column>
-						<f:facet name="header">ID</f:facet>
-						<h:outputText value="#{user.id}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Nome</f:facet>
-						<h:outputText value="#{user.nomeTurma}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Professor</f:facet>
-						<h:outputText value="#{user.professor.nome}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Editar</f:facet>
-						<h:link class="larguraBotaoSb" outcome="/cadastroTurma"
-							value="Editar">
-							<f:param name="id" value="#{user.id}" />
-						</h:link>
-					</h:column>
-					<h:column>
-						<f:facet name="header">Excluir</f:facet>
-						<h:commandLink
-							onclick="return confirm('Tem certeza da exclusão do usuário #{user.nomeTurma}');"
-							class="larguraBotaoSb"
-							action="#{turmaMb.excluir(user.id)}" value="Excluir" />
-					</h:column>
-
-				</h:dataTable>
-			</h:form>
-		</div>
-		<div class="col-xs-12 col-sm-1"></div>
-
 	</ui:define>
 </ui:composition>
 </html>
