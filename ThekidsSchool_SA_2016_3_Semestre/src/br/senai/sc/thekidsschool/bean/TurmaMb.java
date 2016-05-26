@@ -81,7 +81,7 @@ public class TurmaMb {
 	
 	public void excluirAluno(AjaxBehaviorEvent event) {
 		Usuario aluno = (Usuario) event.getComponent().getAttributes()
-				.get("idTurma");
+				.get("idAluno");
 		turma.getAlunosTurma().remove(aluno);
 	}
 

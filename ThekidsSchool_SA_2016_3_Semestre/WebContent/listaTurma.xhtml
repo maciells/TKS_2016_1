@@ -8,13 +8,26 @@
 
 <ui:composition template="/WEB-INF/template/padrao.xhtml">
 	<ui:define name="conteudo">
-		<div class="page-header">
+		
+			<div id="imgTituloDaPagina">
+			<div id="divImagemTituloPagina" class="animated bounceInLeft">
+				<h:graphicImage value="/resources/img/iconeDicionarios.png"
+					id="imgTp" />
+			</div>
+		</div>
+		<div id="titulo">
 			<h1>Turma</h1>
+		</div>	
 			
+			<h:messages />
+			<div class="col-xs-12 col-sm-1"></div>
+			<div class="col-xs-12 col-sm-10" id="formulario">
+			<div class="col-xs-12 col-sm-12">
 			<h:link outcome="/cadastroTurma" styleClass="btn btn-success">
 				<span class="glyphicon glyphicon-plus"></span>
 			</h:link>
-			<h:messages />
+			</div>
+			<h:form>
 			<h:dataTable styleClass="table" value="#{turmaMb.listaTurma}"
 				var="turma">
 				
@@ -24,7 +37,7 @@
 				</h:column>
 				
 			    <h:column>
-					<f:facet name="header">Destino</f:facet>
+					<f:facet name="header">Turma</f:facet>
 					<h:outputText value="#{turma.nomeTurma}" />
 				</h:column>
 				
@@ -37,7 +50,7 @@
 				
 				<h:column>
 					<f:facet name="header">Termino</f:facet>
-					<h:outputText value="#{escursao.termino}">
+					<h:outputText value="#{turma.termino}">
 						<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
 					</h:outputText>
 					
@@ -54,13 +67,24 @@
 				</h:column>
 				
 				<h:column>
-					<h:link styleClass="btn btn-default" outcome="/turma"
-						value="Editar">
-						<f:param name="id" value="#{turma.id}" />
-					</h:link>
+						<f:facet name="header">Editar</f:facet>
+						<h:link class="larguraBotaoSb" outcome="/cadastroTurma"
+							value="Editar">
+							<f:param name="id" value="#{turma.id}" />
+						</h:link>
+				</h:column>
+			
+				<h:column>
+					<f:facet name="header">Excluir</f:facet>
+					<span> <h:commandLink styleClass="larguraBotaoSb"
+								action="#{turmaMb.excluir(turma.id)}" value="Excluir"
+								onclick="return confirm('Tem certeza da exclusão da escurção para #{turma.nomeTurma}')" />
+						</span>
 				</h:column>
 			</h:dataTable>
-		</div>
+			</h:form>
+			</div>
+			<div class="col-xs-12 col-sm-1"></div>
 	</ui:define>
 </ui:composition>
 </html>
