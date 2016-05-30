@@ -9,28 +9,26 @@
 <ui:composition template="/WEB-INF/template/padrao.xhtml">
 	<ui:define name="conteudo">
 		
-			<div id="imgTituloDaPagina">
+		<div id="imgTituloDaPagina">
 			<div id="divImagemTituloPagina" class="animated bounceInLeft">
-				<h:graphicImage value="/resources/img/iconeDicionarios.png"
-					id="imgTp" />
+				<h:graphicImage value="/resources/img/iconeDicionarios.png" id="imgTp" />
 			</div>
 		</div>
 		<div id="titulo">
 			<h1>Turma</h1>
 		</div>	
-			
-			<h:messages />
-			<div class="col-xs-12 col-sm-1"></div>
-			<div class="col-xs-12 col-sm-10" id="formulario">
 			<div class="col-xs-12 col-sm-12">
-			<h:link outcome="/cadastroTurma" styleClass="btn btn-success">
-				<span class="glyphicon glyphicon-plus"></span>
-			</h:link>
+				<h:link outcome="/cadastroTurma" styleClass="btn btn-success">
+					<span class="glyphicon glyphicon-plus"></span>
+				</h:link>
 			</div>
+			<h:messages />
+					<div class="col-xs-12 col-sm-1"></div>
+					<div class="col-xs-12 col-sm-10" id="formulario">
+			
 			<h:form>
-			<h:dataTable styleClass="table" value="#{turmaMb.listaTurma}"
-				var="turma">
-				
+			<h:dataTable styleClass="table" value="#{turmaMb.listaTurma}" var="turma">
+			
 				<h:column>
 					<f:facet name="header">ID</f:facet>
 					<h:outputText value="#{turma.id}" />
@@ -44,16 +42,15 @@
 				<h:column>
 					<f:facet name="header">Inicio</f:facet>
 					<h:outputText value="#{turma.inicio}">
-						<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+					<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
 					</h:outputText>
 				</h:column>
 				
 				<h:column>
 					<f:facet name="header">Termino</f:facet>
 					<h:outputText value="#{turma.termino}">
-						<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+					<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
 					</h:outputText>
-					
 				</h:column>
 				
 				<h:column>
@@ -67,20 +64,30 @@
 				</h:column>
 				
 				<h:column>
-						<f:facet name="header">Editar</f:facet>
-						<h:link class="larguraBotaoSb" outcome="/cadastroTurma"
-							value="Editar">
-							<f:param name="id" value="#{turma.id}" />
-						</h:link>
+					<f:facet name="header">Aluno</f:facet>
+					<h:dataTable value="#{turma.alunosTurma}" var = "aluno">
+					<h:column>
+					<h:outputText value="#{aluno.nome}" /> 
+					</h:column>
+					</h:dataTable>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Editar</f:facet>
+					<h:link class="larguraBotaoSb" outcome="/cadastroTurma"
+					value="Editar">
+					<f:param name="id" value="#{turma.id}" />
+					</h:link>
 				</h:column>
 			
 				<h:column>
 					<f:facet name="header">Excluir</f:facet>
 					<span> <h:commandLink styleClass="larguraBotaoSb"
-								action="#{turmaMb.excluir(turma.id)}" value="Excluir"
-								onclick="return confirm('Tem certeza da exclusão da escurção para #{turma.nomeTurma}')" />
+					action="#{turmaMb.excluir(turma.id)}" value="Excluir"
+					onclick="return confirm('Tem certeza da exclusão da escurção para #{turma.nomeTurma}')" />
 						</span>
 				</h:column>
+				
 			</h:dataTable>
 			</h:form>
 			</div>

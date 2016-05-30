@@ -48,7 +48,7 @@ public class UsuarioMb {
 		}
 		return listaUsuarios;
 	}
-
+	
 	public void setListaUsuarios(List<Usuario> listaUsuarios) {
 		this.listaUsuarios = listaUsuarios;
 	}

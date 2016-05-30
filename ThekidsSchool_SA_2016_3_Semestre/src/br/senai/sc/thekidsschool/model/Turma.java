@@ -1,4 +1,4 @@
-package br.senai.sc.thekidsschool.model;
+ package br.senai.sc.thekidsschool.model;
 
 import java.util.List;
 

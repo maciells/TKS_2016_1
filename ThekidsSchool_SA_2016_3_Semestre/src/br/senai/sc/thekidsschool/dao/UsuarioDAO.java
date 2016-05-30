@@ -58,4 +58,13 @@ public class UsuarioDAO {
 		
 		return query.getResultList();
 	}
+	
+	public List<Usuario> listarAlunosTurma() {
+		Query query = getEM().createQuery("From turma_usuario", Usuario.class);
+		query.setParameter("turma", Perfil.ALUNO);
+		
+		return query.getResultList();
+	}
+	
+	
 }

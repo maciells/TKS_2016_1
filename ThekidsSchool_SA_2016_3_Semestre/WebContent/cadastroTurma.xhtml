@@ -61,7 +61,7 @@
 						<h:selectOneMenu id="uiSelecionaAluno" styleClass="form-control"
 							value="#{turmaMb.alunoSelecionado}">
 							<f:selectItem itemLabel="Selecione" noSelectionOption="true" />
-							<f:selectItems value="#{usuarioMb.listaUsuarios}" var="alu"
+							<f:selectItems value="#{usuarioMb.listaAluno}" var="alu"
 								itemLabel="#{alu.nome}" itemValue="#{alu}" />
 						</h:selectOneMenu>
 					</div>
@@ -133,12 +133,9 @@
 				<h:inputText styleClass="form-control"
 					value="#{turmaMb.turma.valor}" />
 			</div>
-			
-			
 					<button type="reset" class="larguraBotaoSb">Restaurar</button>
 					<h:commandButton action="#{turmaMb.salvar}" value="Salvar" 
-					styleClass="larguraBotaoSb"
-						/>
+					styleClass="larguraBotaoSb"/>
 				</div>
 			</h:form>
 		</div>

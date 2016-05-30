@@ -26,6 +26,7 @@ public class TurmaMb {
 	private TurmaRN turmaRN;
 	private Long editarId;
 	private Usuario alunoSelecionado;
+	
 
 	@PostConstruct
 	public void init(){
@@ -107,7 +108,7 @@ public class TurmaMb {
 					null,
 					new FacesMessage(FacesMessage.SEVERITY_INFO, "Salvo",
 							"Salvo com sucesso."));
-			return "/cadastroTurma";
+			return "/listaTurma";
 		} catch (IllegalArgumentException exception) {
 			exception.printStackTrace();
 			FacesContext.getCurrentInstance().addMessage(

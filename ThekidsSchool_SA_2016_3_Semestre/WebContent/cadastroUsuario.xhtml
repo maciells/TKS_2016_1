@@ -47,12 +47,18 @@
 							<f:selectItem itemLabel="Aluno" itemValue="ALUNO" />
 						</h:selectOneMenu>
 					</div>
-
+					
 					<div class="form-group">
-						<label for="exampleInputDataInscricao">Data de Inscrição</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.dataInscricao }"
-							id="exampleInputDataInscricao" />
+						<label>Inicio</label>
+						<div class='input-group date datetimepicker'>
+							<h:inputText styleClass="form-control"
+								value="#{usuarioMb.usuario.dataInscricao}">
+								<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+							</h:inputText>
+							<span class="input-group-addon"> <span
+								class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
 					</div>
 
 					<div class="form-group">
@@ -80,12 +86,18 @@
 							</div>
 						</h:selectOneRadio>
 					</div>
-
+					
 					<div class="form-group">
-						<label for="exampleInputDataNascimento">Data de Nascimento</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.dataNascimento }"
-							id="exampleInputDataNascimento" />
+						<label>Data de Nascimento</label>
+						<div class='input-group date datetimepicker'>
+							<h:inputText styleClass="form-control"
+								value="#{usuarioMb.usuario.dataNascimento}">
+								<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+							</h:inputText>
+							<span class="input-group-addon"> <span
+								class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
 					</div>
 
 					<div class="form-group">
