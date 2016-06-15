@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title><ui:insert name="title">Default title</ui:insert></title>
+	<h:outputStylesheet name="/bootstrap/css/bootstrap.css" />
+	<h:outputStylesheet name="/bootstrap/template/offcanvas.css" />
+	<h:outputStylesheet
+		name="/bootstrap-datepicker/bootstrap-datetimepicker.css" />
+	<h:outputStylesheet name="/css/desktop.css" />
+	<h:outputStylesheet name="/css/animate.css" />
+	<h:outputScript name="/js/jquery.min.js" />
+	
+	
+	<script src="http://arquivos.weblibras.com.br/auto/wl-min.js"></script>
+	 <script type="text/javascript">
+	
+	/*--------Slide da pagina de inicio-----------------*/
+		
+			$(function() {
+				$('.slide').cycle ({
+					fx: 'turnRight',
+					prev: '#esq',
+					next: '#dir',
+					timeout: 6000
+				});
+			});
+			
+			
+			
+			var wl = new WebLibras();
+		
+	</script>
+	
+</h:head>
+
+<h:body>
+
+	<div class="container" id="topo">
+		<!--Logo-->
+		<div class="col-xs-12 col-sm-1"></div>
+		<div class="col-xs-12 col-sm-4" id="logo"></div>
+		<div class="col-xs-12 col-sm-7"></div>
+	</div>
+
+
+	<div class="container" id="menuTopAdm">
+		<div class="col-xs-12 col-sm-1"></div>
+		<div class="col-xs-12 col-sm-10">
+			<ul class="nav navbar-nav  pp">
+				<li class="active"><h:link outcome="/index"
+						value="Início" /></li>
+				<li class="active"><h:link outcome="/quemSomos"
+						value="Quem Somos" /></li>
+				<li class="active"><h:link outcome="/metodologia"
+						value="Metodologia" /></li>
+				<li class="active"><h:link outcome="/login"
+						value="Longin" /></li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-1"></div>
+	</div>
+
+
+
+	<div class="container" id="conteudoAdm">
+		<div class="row row-offcanvas row-offcanvas-right">
+			<div class="col-xs-12 col-sm-12">
+				<ui:insert name="conteudo">
+				</ui:insert>
+			</div>
+			<!--/.col-xs-12.col-sm-9-->
+			<!--/.sidebar-offcanvas-->
+		</div>
+		<!--/row-->
+	</div>
+	<!--/.container-->
+	<div class="container" id="rodape">
+		<div class="col-xs-12 col-sm-12">
+			<div id="relacionamento">
+				<h:link outcome="https://pt-br.facebook.com/" styleClass="opacidade">
+					<div id="facebook"></div>
+				</h:link>
+
+				<h:link outcome="" styleClass="opacidade">
+					<div id="skype"></div>
+				</h:link>
+
+				<h:link outcome="https://twitter.com/?lang=pt"
+					styleClass="opacidade">
+					<div id="twiter"></div>
+				</h:link>
+
+				<h:link outcome="" styleClass="opacidade">
+					<div id="whatsapp"></div>
+				</h:link>
+
+				<h:link outcome="https://instagram.com/" styleClass="opacidade">
+					<div id="instagram"></div>
+				</h:link>
+			</div>
+		</div>
+	</div>
+	<h:outputScript name="/js/moment-with-locales.js" />
+	<h:outputScript name="/js/menu.js" />
+	<h:outputScript name="/bootstrap/js/bootstrap.js" />
+	<h:outputScript
+		name="/bootstrap-datepicker/bootstrap-datetimepicker.js" />
+	<h:outputScript name="/bootstrap/template/offcanvas.js" />
+	<h:outputScript name="js/jquery.cycle.all.js"/>
+	
+	
+	
+</h:body>
+
+</html>

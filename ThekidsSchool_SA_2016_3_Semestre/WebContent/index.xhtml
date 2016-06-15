@@ -6,23 +6,18 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 
-<ui:composition template="/WEB-INF/template/padrao.xhtml">
+<ui:composition template="/WEB-INF/template/padraoInstitucional.xhtml">
 
 	<ui:define name="conteudo">
-					<div id="containerEstudante">
-						<div id="conteudoEstudante">
 
-							<div id="propagandaEstudante">
-								<img src="#" id="imgPropaganda" />
-								<!-- Essas imagens vem do banco de dados-->
-							</div>
+		<div id="slide">
+			<div class="slide">
+				 <h:graphicImage  name="img/4.png" styleClass="imgSlide"/>
+				 <h:graphicImage  name="img/3.png" styleClass="imgSlide"/>
+				 <h:graphicImage  name="img/6.png" styleClass="imgSlide"/>
+			</div>
+		</div>
 
-							<div id="propagandaEstudante">
-								<img src="#" id="imgPropaganda" />
-								<!-- Essas imagens vem do banco de dados-->
-							</div>
-						</div>
-					</div>
-				</ui:define>	
+	</ui:define>
 </ui:composition>
 </html>
