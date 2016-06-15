@@ -77,7 +77,7 @@ public class TurmaMb {
 		turma = turmaRN.buscarPorId(editarId);
 	}
 	
-//------
+
 	
 	public void excluirAluno(AjaxBehaviorEvent event) {
 		Usuario aluno = (Usuario) event.getComponent().getAttributes()
