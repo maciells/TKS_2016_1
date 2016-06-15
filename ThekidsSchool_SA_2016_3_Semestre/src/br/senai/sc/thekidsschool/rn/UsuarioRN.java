@@ -36,13 +36,16 @@ public class UsuarioRN {
 	}
 
 	public List<Usuario> listaAdministrador() {
-
+		// TODO Auto-generated method stub
 		return dao.listarAdministrador();
 	}
 
 	public List<Usuario> listaAluno() {
-
-		return dao.lisarAluno();
+		// TODO Auto-generated method stub
+		return dao.lisarAluno();	
 	}
 
+	public Usuario buscarPorEmail(String email) {
+		return dao.buscarPorEmail(email);
+	}
 }

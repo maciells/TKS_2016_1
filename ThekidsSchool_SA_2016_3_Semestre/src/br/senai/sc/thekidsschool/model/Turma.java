@@ -1,4 +1,4 @@
- package br.senai.sc.thekidsschool.model;
+package br.senai.sc.thekidsschool.model;
 
 import java.util.List;
 
@@ -19,6 +19,7 @@ public class Turma {
 	private Date inicio;
 	private Date termino;
 	private float valor;
+	private String turno;
 	@ManyToOne
 	private Usuario professor;
 	@ManyToMany
@@ -63,6 +64,13 @@ public class Turma {
 	}
 	public void setValor(float valor) {
 		this.valor = valor;
+	}
+	
+	public String getTurno() {
+		return turno;
+	}
+	public void setTurno(String turno) {
+		this.turno = turno;
 	}
 	public List<Usuario> getAlunosTurma() {
 		return alunosTurma;

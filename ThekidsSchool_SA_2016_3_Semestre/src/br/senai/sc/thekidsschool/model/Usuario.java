@@ -1,6 +1,8 @@
 package br.senai.sc.thekidsschool.model;
 
 import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -16,11 +18,11 @@ public class Usuario implements Serializable {
 	private Long id;
 	@Enumerated(EnumType.STRING)
 	private Perfil perfil;
-	private String dataInscricao;
+	private Date dataInscricao;
 	private String nome;
 	private int idade;
 	private String sexo;
-	private String dataNascimento;
+	private Date dataNascimento;
 	private String nomeMae;
 	private String nomePai;
 	private String cpf;
@@ -58,12 +60,16 @@ public class Usuario implements Serializable {
 		this.perfil = perfil;
 	}
 
-	public String getDataInscricao() {
+	public Date getDataInscricao() {
 		return dataInscricao;
 	}
 
-	public void setDataInscricao(String dataInscricao) {
+	public void setDataInscricao(Date dataInscricao) {
 		this.dataInscricao = dataInscricao;
+	}
+
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
 	public String getNome() {
@@ -90,12 +96,9 @@ public class Usuario implements Serializable {
 		this.sexo = sexo;
 	}
 
-	public String getDataNascimento() {
-		return dataNascimento;
-	}
 
-	public void setDataNascimento(String dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public Date getDataNascimento() {
+		return dataNascimento;
 	}
 
 	public String getNomeMae() {

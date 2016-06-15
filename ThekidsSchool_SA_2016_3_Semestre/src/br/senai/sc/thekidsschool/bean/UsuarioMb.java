@@ -5,10 +5,10 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.event.ComponentSystemEvent;
+
 import br.senai.sc.thekidsschool.model.Perfil;
 import br.senai.sc.thekidsschool.model.Usuario;
 import br.senai.sc.thekidsschool.rn.UsuarioRN;
-
 
 @ManagedBean
 public class UsuarioMb {
@@ -48,7 +48,7 @@ public class UsuarioMb {
 		}
 		return listaUsuarios;
 	}
-	
+
 	public void setListaUsuarios(List<Usuario> listaUsuarios) {
 		this.listaUsuarios = listaUsuarios;
 	}
@@ -64,7 +64,7 @@ public class UsuarioMb {
 	public String excluir(String id) {
 		Long idExcluir = Long.parseLong(id);
 		usuarioRN.excluir(idExcluir);
-		listaUsuarios = null;
+		listaAluno = null;
 		listaProfessores = null;
 		listaAdministrador = null;
 		
@@ -74,15 +74,16 @@ public class UsuarioMb {
 	public String salvar() {
 		usuarioRN.salvar(usuario);
 		if (usuario.getPerfil().equals(Perfil.ADMINISTRADOR)) {
-			listaUsuarios = null;
-			if (usuario.getPerfil().equals(Perfil.ALUNO)) {
-				listaUsuarios = null;
-				if (usuario.getPerfil().equals(Perfil.PROFESSOR)) {
-					listaUsuarios = null;
+			listaAdministrador = null;
+			return "/Admin/listaAdministrador";
+			}else if (usuario.getPerfil().equals(Perfil.ALUNO)) {
+				listaAluno = null;
+				return "/Admin/listaAluno";
+				}else if (usuario.getPerfil().equals(Perfil.PROFESSOR)) {
+					listaProfessores = null;
+					return "/Admin/listaProfessor";
 				}
-			}
-		}
-		return "/listarUsuario";
+		return "/Admin/listarUsuario";
 	}
 
 	public List<Usuario> getListaProfessores() {

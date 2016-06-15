@@ -8,6 +8,8 @@ import javax.persistence.Query;
 import br.senai.sc.thekidsschool.commons.JpaUtil;
 import br.senai.sc.thekidsschool.model.Turma;
 
+
+
 public class TurmaDAO {
 
 	@SuppressWarnings("unchecked")
@@ -29,8 +31,10 @@ public class TurmaDAO {
 		return getEM().find(Turma.class, id);
 	}
 	
+	
 	private EntityManager getEM() {
 		EntityManager em = JpaUtil.getEntityManager();
 		return em;
 	}
+
 }

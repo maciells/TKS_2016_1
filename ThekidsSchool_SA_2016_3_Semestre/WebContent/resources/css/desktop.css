@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'fonte';
-	src: url(../fonts/KGYouWontBringMeDown.ttf)
+	src: url("#{facesContext.externalContext.requestContextPath}/resources/fonts/KGYouWontBringMeDown.ttf");      
 }
 
 body {
@@ -19,7 +19,7 @@ body {
 }
 
 #logo {
-	background-image: url("../img/logoGif.gif");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/logoGif.gif");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -33,7 +33,7 @@ body {
 }
 
 #logoHome {
-	background-image: url("../img/logoGif.gif");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/logoGif.gif");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -147,168 +147,6 @@ body {
 /*fim do Edita os links do menu iniciar*/
 /*----------------------------------------------------------fim do topo---------------------------------------------------------------------------*/
 
-/*---------------------------------menu vertical------------------------------------*/
-#botaoMenuVertical {
-	min-width: 2.5%;
-	min-height: 2.5em;
-	position: fixed;
-	top: 20.3em;
-	background-image: url("../img/atalhoMenu.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-size: 100% 100%;
-	-webkit-background-size: 100% 100%;
-	-o-background-size: 100% 100%;
-	-khtml-background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	-webkit-transition: 0.2s ease-in;
-	-moz-transition: 0.2s ease-in;
-	-o-transition: 0.2s ease-in;
-	transition: 0.2s ease-in;
-}
-
-#botaoMenuVertical:hover {
-	height: 100%;
-	width: 12%;
-	top: 0em;
-	bottom: 0em;
-	background-color: white;
-	border: 3px solid #FEBE0F;
-	-webkit-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
-	-moz-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
-	box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
-}
-
-#menuVertical {
-	width: 100%;
-	height: 100%;
-	display: none;
-	-webkit-transition: width 0.2s ease-in;
-	-moz-transition: width 0.2s ease-in;
-	-o-transition: width 0.2s ease-in;
-	transition: width 0.2s ease-in;
-}
-
-#botaoMenuVertical:hover  #menuVertical {
-	display: block;
-	margin-top: 20em;
-}
-
-#menuVertical ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	margin-top: 5%;
-}
-
-#menuVertical ul li {
-	background-image: url("../img/botaoPintadoAzul.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-size: 100% 100%;
-	-webkit-background-size: 100% 100%;
-	-o-background-size: 100% 100%;
-	-khtml-background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	height: 2em;
-	width: 90%;
-	position: relative;
-	margin-bottom: 5%;
-	margin-left: 5%;
-	float: left;
-}
-
-#menuVertical .li {
-	/*deixa o botao vermelho na pagina que eata no momento*/
-	background-image: url("../img/botaoPintadoVermelho.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-size: 100% 100%;
-	-webkit-background-size: 100% 100%;
-	-o-background-size: 100% 100%;
-	-khtml-background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	float: left;
-	position: relative;
-	height: 2em;
-	width: 90%;
-	margin-left: 5%;
-}
-
-#menuVertical ul li:hover {
-	background-image: url("../img/botaoPintadoVermelho.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-size: 100% 100%;
-	-webkit-background-size: 100% 100%;
-	-o-background-size: 100% 100%;
-	-khtml-background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	height: 2em;
-	width: 90%;
-	margin-left: 5%;
-	position: relative;
-	float: left;
-}
-
-/*Aqui começa o efeito drop down do menu*/
-#menuVertical li ul { /*edita a ul que vai fazer o efeito drop down*/
-	position: absolute;
-	width: 100%;
-	height: auto;
-	margin-top: 0%;
-	margin-left: 100%;
-	background-color: white;
-	border: 3px solid #FEBE0F;
-	display: none; /*Aqui esconde a UL para começar o efeito drop down */
-	-webkit-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
-	-moz-box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
-	box-shadow: 4px -3px 9px 0px rgba(50, 50, 50, 0.56);
-}
-
-#menuVertical ul li:hover>ul {
-	/*Aqui faz mostrar a UL com os outros links*/
-	display: block;
-}
-
-/*Aqui termina o efeito drop down do menu*/
-#menuVertical ul li ul li { /*estas sao as li do menu drop down*/
-	background-image: url("../img/botaoPintadoAzul.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-size: 100% 100%;
-	-webkit-background-size: 100% 100%;
-	-o-background-size: 100% 100%;
-	-khtml-background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	height: 2em;
-	width: 90%;
-	position: relative;
-	float: left;
-	margin-left: 5%;
-	margin-bottom: 3%;
-	margin-top: 3%;
-}
-
-#menuVertical ul li ul li:hover {
-	background-image: url("../img/botaoPintadoVermelho.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-size: 100% 100%;
-	-webkit-background-size: 100% 100%;
-	-o-background-size: 100% 100%;
-	-khtml-background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	height: 2em;
-	width: 90%;
-	position: relative;
-	float: left;
-	margin-left: 5%;
-	margin-bottom: 3%;
-	margin-top: 3%;
-}
-
-/*---------------------------------fim do menu verticla------------------------------------*/
 
 /*---------------------------------------------------------slide da area aberta---------------------------------------------------------------*/
 #slide {
@@ -320,10 +158,10 @@ body {
 }
 
 .slide {
-	width: 90%;
+	width: 96%;
 	height: 33.8em;
 	float: left;
-	margin-left: 4.5%;
+	margin-left: 2%;
 	margin-top: 4em;
 	border: 5px solid #FEBE0F;
 	overflow: hidden;
@@ -465,7 +303,8 @@ body {
 	width: 100%;
 	height: 3em;
 	float: left;
-	margin-bottom: 5%;
+	margin-bottom: 4%;
+	margin-top:4%; 
 	text-align: center;
 }
 
@@ -473,6 +312,7 @@ h1 { /*h1 dos titulos das paginas*/
 	color: white;
 	font-size: 3em;
 	font-family: fonte;
+	font-weight:bold; 
 	margin: 0;
 	padding: 0;
 }
@@ -494,7 +334,7 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 #facebook {
-	background-image: url("../img/botaoFacebookAzul.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoFacebookAzul.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -509,7 +349,7 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 #facebook:hover {
-	background-image: url("../img/botaoFacebookVermelho.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoFacebookVermelho.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -524,7 +364,7 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 #twiter {
-	background-image: url("../img/botaoTwiterAzul.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoTwiterAzul.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -539,7 +379,7 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 #twiter:hover {
-	background-image: url("../img/botaoTwiterVermelho.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoTwiterVermelho.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -554,7 +394,7 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 #instagram {
-	background-image: url("../img/botaoInstagramAzul.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoInstagramAzul.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -569,7 +409,7 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 #instagram:hover {
-	background-image: url("../img/botaoInstagramVermelho.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoInstagramVermelho.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -584,7 +424,7 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 #skype {
-	background-image: url("../img/botaoSkypeAzul.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoSkypeAzul.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -599,7 +439,7 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 #skype:hover {
-	background-image: url("../img/botaoSkypeVermelho.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoSkypeVermelho.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -614,7 +454,7 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 #whatsapp {
-	background-image: url("../img/botaoWhatsappAzul.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoWhatsappAzul.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -629,7 +469,7 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 #whatsapp:hover {
-	background-image: url("../img/botaoWhatsappVermelho.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoWhatsappVermelho.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -647,7 +487,7 @@ h1 { /*h1 dos titulos das paginas*/
 
 /*-----------------------------------------------Quem somos------------------------------------------------------------------------------*/
 #imgLapisQuemSomos1 {
-	background-image: url("../img/lapisDeitadoVerde.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/lapisDeitadoVerde.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -663,7 +503,7 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 #imgGloboQuemSomos {
-	background-image: url("../img/globo.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/globo.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -679,7 +519,7 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 #imgQuemSomos {
-	background-image: url("../img/iconeQuemSomos.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/iconeQuemSomos.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -730,7 +570,7 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 #imagemQs1 {
-	background-image: url("../img/cG.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/cG.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -748,7 +588,7 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 #imagemQs2 {
-	background-image: url("../img/coruja.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/coruja.png");   
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -774,10 +614,34 @@ h1 { /*h1 dos titulos das paginas*/
 
 
 /*-----------------Edita  todos os  formularios -----------------*/
+h3{
+	font-weight: bold;
+}
+.espaco{
+	width: 100%;
+	height: 2em;
+	float: left;
+}
+
+.espacoInputRadio{
+	width: 100%;
+	float: left;
+	margin: 10%;
+	
+}
+
+.form-control{
+	font-family: none;
+
+}
+
+.table1{
+	font-family: none;
+	
+}
 #formulario { /*div que abriga o formulario*/
 	
 	height: auto;
-	
 	margin-bottom: 4%;
 	font-size: 1.4em;
 	background-color: white;
@@ -855,7 +719,7 @@ h1 { /*h1 dos titulos das paginas*/
 	width: 90%;
 	height: 1.5em;
 	border: 3px solid;
-	border-image: url("../img/botaoPintadoAzul.png") 28 stretch;
+	border-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoAzul.png")28 stretch; 
 }
 
 .input2 { /*Edita os campos dos inputs da area aberta*/
@@ -887,7 +751,7 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 #enviarDados { /*div com as imagens dos botoes dos formularios*/
-	background-image: url("../img/botaoPintadoAzul.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoAzul.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -902,7 +766,7 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 #limparDados { /*div com as imagens dos botoes dos formularios*/
-	background-image: url("../img/botaoPintadoAzul.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoAzul.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -925,7 +789,7 @@ h1 { /*h1 dos titulos das paginas*/
 	border: none;
 	background-color: transparent;
 	/*------------------------------------*/
-	background-image: url("../img/botaoPintadoAzul.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoAzul.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -947,7 +811,7 @@ h1 { /*h1 dos titulos das paginas*/
 	border: none;
 	background-color: transparent;
 	/*------------------------------------*/
-	background-image: url("../img/botaoPintadoVermelho.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoVermelho.png");   
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1015,7 +879,7 @@ h1 { /*h1 dos titulos das paginas*/
 /*------------------------------------------------------*/
 #enviarDados:hover {
 	/*quando passar o mouse por cima do botao do formulario ele fica vermelho*/
-	background-image: url("../img/botaoPintadoVermelho.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoVermelho.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1024,14 +888,14 @@ h1 { /*h1 dos titulos das paginas*/
 	-khtml-background-size: 100% 100%;
 	-moz-background-size: 100% 100%;
 	width: 20%;
-	height: 2.5em;
+	height: 2.5em; 
 	float: left;
 	margin-left: 30%;
 }
 
 #limparDados:hover {
 	/*quando passar o mouse por cima do botao do formulario ele fica vermelho*/
-	background-image: url("../img/botaoPintadoVermelho.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoVermelho.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1137,9 +1001,9 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 .larguraBotaoSb {
-	width: 40%;
+	width: 100%;
 	background-color: transparent;
-	background-image: url("../img/botaoPintadoAzul.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoVerde.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1153,9 +1017,41 @@ h1 { /*h1 dos titulos das paginas*/
 }
 
 .larguraBotaoSb:hover {
-	width: 40%;
+	width: 100%;
 	background-color: transparent;
-	background-image: url("../img/botaoPintadoVermelho.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoVermelho.png"); 
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	color: white;
+	text-decoration: none;
+}
+
+
+.larguraBotaoSb1 {
+	width: 100%;
+	background-color: transparent;
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoAzul.png"); 
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	border: none;
+	color: white;
+	text-decoration: none;
+}
+
+.larguraBotaoSb1:hover {
+	width: 100%;
+	background-color: transparent;
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoVermelho.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1178,7 +1074,7 @@ tr.linhaTabela:hover {
 
 /*-----------------------------------------------login------------------------------------------------------------------------------*/
 #hugoLogin {
-	background-image: url("../img/hugoSentadoGif.gif");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/hugoSentadoGif.gif");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1197,7 +1093,7 @@ tr.linhaTabela:hover {
 
 /*----------------------------------------------Contato--------------------------------------------*/
 #hugoContato {
-	background-image: url("../img/hugoSentadoGif.gif");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/hugoSentadoGif.gif");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1216,7 +1112,7 @@ tr.linhaTabela:hover {
 
 /*----------------------------------------------Cadastro---------------------------------------------------------------------------------*/
 #hugoCadastro {
-	background-image: url("../img/hugoSentadoGif.gif");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/hugoSentadoGif.gif");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1330,7 +1226,7 @@ tr.linhaTabela:hover {
 
 /*------------------------------Dados do Estudante--------------------------------------*/
 #luminariaDadosEstudante {
-	background-image: url("../img/luminariaVerde.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/luminariaVerde.png");    
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1346,7 +1242,7 @@ tr.linhaTabela:hover {
 }
 
 #hugoDadosEstudante {
-	background-image: url("../img/hugoSentado1.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/hugoSentado1.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1362,7 +1258,7 @@ tr.linhaTabela:hover {
 }
 
 #GloboDesempenhoEstudante {
-	background-image: url("../img/globo.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/globo.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1378,7 +1274,7 @@ tr.linhaTabela:hover {
 }
 
 #GloboDadosEstudante {
-	background-image: url("../img/globo.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/globo.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1397,7 +1293,7 @@ tr.linhaTabela:hover {
 
 /*------------------------------ Contato do Estudante-----------------------------------*/
 #hugoContatoEstudante {
-	background-image: url("../img/hugoSentadoPc.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/hugoSentadoPc.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1413,7 +1309,7 @@ tr.linhaTabela:hover {
 }
 
 #lapisVerdeContatoEstudante {
-	background-image: url("../img/lapisDeitadoVerde.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/lapisDeitadoVerde.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1439,7 +1335,7 @@ tr.linhaTabela:hover {
 }
 
 #pilhaLivrosAula {
-	background-image: url("../img/pilhaLivros1.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/pilhaLivros1.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1455,7 +1351,7 @@ tr.linhaTabela:hover {
 }
 
 #hugoVideoAula {
-	background-image: url("../img/hugoSentado1.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/hugoSentado1.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1528,7 +1424,7 @@ tr.linhaTabela:hover {
 }
 
 #proximo { /*Botao*/
-	background-image: url("../img/setaDireitaBranca.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/setaDireitaBranca.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1543,7 +1439,7 @@ tr.linhaTabela:hover {
 }
 
 #anterior:hover { /*Botao*/
-	background-image: url("../img/setaEsquerdaAmarela.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/setaEsquerdaAmarela.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1557,7 +1453,7 @@ tr.linhaTabela:hover {
 }
 
 #proximo:hover { /*Botao*/
-	background-image: url("../img/setaDireitaAmarela.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/setaDireitaAmarela.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1572,7 +1468,7 @@ tr.linhaTabela:hover {
 }
 
 #anterior { /*Botao*/
-	background-image: url("../img/setaEsquerdaBranca.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/setaEsquerdaBranca.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1601,7 +1497,7 @@ tr.linhaTabela:hover {
 }
 
 #hugoAula {
-	background-image: url("../img/hugoSentado1.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/hugoSentado1.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1617,7 +1513,7 @@ tr.linhaTabela:hover {
 }
 
 #pilhaLivrosVideoAula {
-	background-image: url("../img/pilhaLivros1.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/pilhaLivros1.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1640,11 +1536,11 @@ tr.linhaTabela:hover {
 	cursor: pointer;
 	margin-left: 4.5%;
 	border: 4px solid;
-	border-image: url("../img/botaoPintadoBranco.png") 28 stretch;
+	border-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoBranco.png")28 stretch; 
 }
 
 #divImgVisto {
-	background-image: url("../img/iconeVistoP.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/iconeVistoP.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1666,11 +1562,11 @@ tr.linhaTabela:hover {
 	cursor: pointer;
 	margin-left: 4.5%;
 	border: 4px solid;
-	border-image: url("../img/botaoPintadoAmarelo.png") 28 stretch;
+	border-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoAmarelo.png")28 stretch; 
 }
 
 #divBotaoAulaConcluida:hover #divImgVisto {
-	background-image: url("../img/iconeVistoPamarelo.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/iconeVistoPamarelo.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1724,7 +1620,7 @@ tr.linhaTabela:hover {
 
 /*material de apoio*/
 #divImgMaterial {
-	background-image: url("../img/iconeArquivoP.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/iconeArquivoP.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1740,7 +1636,7 @@ tr.linhaTabela:hover {
 }
 
 #divdownloadMaterial:hover #divImgMaterial {
-	background-image: url("../img/iconeArquivoPamarelo.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/iconeArquivoPamarelo.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1779,7 +1675,7 @@ tr.linhaTabela:hover {
 	cursor: pointer;
 	margin-left: 4.5%;
 	border: 4px solid;
-	border-image: url("../img/botaoPintadoBranco.png") 28 stretch;
+	border-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoBranco.png")28 stretch;  
 }
 
 #divdownloadMaterial:hover {
@@ -1789,7 +1685,7 @@ tr.linhaTabela:hover {
 	cursor: pointer;
 	margin-left: 4.5%;
 	border: 4px solid;
-	border-image: url("../img/botaoPintadoAmarelo.png") 28 stretch;
+	border-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoAmarelo.png")28 stretch;  
 }
 
 #textoDownload {
@@ -1808,7 +1704,7 @@ tr.linhaTabela:hover {
 }
 /*fim material de apoio*/
 #poteLapis {
-	background-image: url("../img/relogio.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/relogio.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1828,7 +1724,7 @@ tr.linhaTabela:hover {
 
 /*------------------------------  div Jogos    -----------------------------------*/
 #lapisJogos {
-	background-image: url("../img/lapisDeitadoRoxo.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/lapisDeitadoRoxo.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1844,7 +1740,7 @@ tr.linhaTabela:hover {
 }
 
 #hugoJogos {
-	background-image: url("../img/hugoSentado1.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/hugoSentado1.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1913,7 +1809,7 @@ tr.linhaTabela:hover {
 
 /*------------------------------  div Dicionario    -----------------------------------*/
 #lapisDicionario {
-	background-image: url("../img/lapisDeitadoVerde.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/lapisDeitadoVerde.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -1929,7 +1825,7 @@ tr.linhaTabela:hover {
 }
 
 #pilhaLivrosDicionario {
-	background-image: url("../img/pilhaLivros2.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/pilhaLivros2.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -2018,7 +1914,7 @@ tr.linhaTabela:hover {
 }
 
 #lapisVerdeChat {
-	background-image: url("../img/lapisDeitadoVerde.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/lapisDeitadoVerde.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -2034,7 +1930,7 @@ tr.linhaTabela:hover {
 }
 
 #hugoChat {
-	background-image: url("../img/hugoSentadoPc.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/hugoSentadoPc.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -2053,7 +1949,7 @@ tr.linhaTabela:hover {
 
 /*------------------------------Grupo WhasApp-----------------------------------*/
 #hugoWhatsapp {
-	background-image: url("../img/hugoSentadoPc.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/hugoSentadoPc.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -2069,7 +1965,7 @@ tr.linhaTabela:hover {
 }
 
 #lapisVerdeWhatsapp {
-	background-image: url("../img/lapisDeitadoVerde.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/lapisDeitadoVerde.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -2088,7 +1984,7 @@ tr.linhaTabela:hover {
 
 /*------------------------------Skype-----------------------------------*/
 #hugoSkype {
-	background-image: url("../img/hugoSentadoPc.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/hugoSentadoPc.png");   
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
@@ -2104,7 +2000,7 @@ tr.linhaTabela:hover {
 }
 
 #lapisVerdeSkype {
-	background-image: url("../img/lapisDeitadoAzul.png");
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/lapisDeitadoAzul.png");  
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-size: 100% 100%;
