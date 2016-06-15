@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title><ui:insert name="title">Default title</ui:insert></title>
+	<h:outputStylesheet name="/bootstrap/css/bootstrap.css" />
+	<h:outputStylesheet name="/bootstrap/template/offcanvas.css" />
+	<h:outputStylesheet
+		name="/bootstrap-datepicker/bootstrap-datetimepicker.css" />
+	<h:outputStylesheet name="/css/desktop.css" />
+	<h:outputStylesheet name="/css/animate.css" />
+	<h:outputScript name="/js/jquery.min.js" />
+</h:head>
+
+<h:body>
+
+	<div class="container" id="topo">
+		<!--Logo-->
+		<div class="col-xs-12 col-sm-1"></div>
+		<div class="col-xs-12 col-sm-4" id="logo"></div>
+		<div class="col-xs-12 col-sm-7"></div>
+	</div>
+
+
+	<div class="container" id="menuTopAdm">
+		<div class="col-xs-12 col-sm-1"></div>
+
+		<div class="col-xs-12 col-sm-10">
+			<ul class="nav navbar-nav  pp">
+				<li class="active"><h:link outcome="/Aluno/homeAluno"
+						value="Início" /></li>
+
+				<li class="dropdown "><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">Aluno <span class="caret"></span></a>
+					<ul class="dropdown-menu pps">
+						<li><h:link outcome="" value="Usuario" /></li>
+						<li role="separator" class="divider"></li>
+						<li><h:link outcome="" value="Turmas" /></li>
+
+					</ul></li>
+				<h:form>
+					
+							<li><h:commandLink action="#{sessaoMb.sair}" value="Sair"
+										styleClass="btn btn-danger" /></li>
+					
+				</h:form>
+			</ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-1"></div>
+	</div>
+
+	<div class="container" id="conteudoAdm">
+
+		<div class="row row-offcanvas row-offcanvas-right">
+
+			<div class="col-xs-12 col-sm-12">
+				<ui:insert name="conteudo">
+
+
+
+
+
+				</ui:insert>
+			</div>
+			<!--/.col-xs-12.col-sm-9-->
+
+
+			<!--/.sidebar-offcanvas-->
+		</div>
+		<!--/row-->
+
+
+
+
+
+	</div>
+	<!--/.container-->
+	<div class="container" id="rodape"></div>
+	<h:outputScript name="/js/moment-with-locales.js" />
+	<h:outputScript name="/js/menu.js" />
+	<h:outputScript name="/bootstrap/js/bootstrap.js" />
+	<h:outputScript
+		name="/bootstrap-datepicker/bootstrap-datetimepicker.js" />
+	<h:outputScript name="/bootstrap/template/offcanvas.js" />
+</h:body>
+
+</html>
