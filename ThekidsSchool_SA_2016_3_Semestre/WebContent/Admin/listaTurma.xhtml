@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/template/padraoAdmin.xhtml">
+	<ui:define name="conteudo">
+
+		<div id="titulo">
+			<h1>Lista de Turmas TKS</h1>
+		</div>
+
+		<div class="col-xs-12 col-sm-1"></div>
+		<div class="col-xs-12 col-sm-10" id="formulario">
+			<h:form>
+				<h:dataTable value="#{turmaMb.listaTurma}" var="user"
+					styleClass="table">
+					<h:column>
+						<f:facet name="header">ID</f:facet>
+						<h:outputText value="#{user.id}" styleClass="table1"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Nome</f:facet>
+						<h:outputText value="#{user.nomeTurma}" styleClass="table1"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Professor</f:facet>
+						<h:outputText value="#{user.professor.nome}" styleClass="table1"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Turno</f:facet>
+						<h:outputText value="#{user.turno}" styleClass="table1"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Inicio</f:facet>
+						<h:outputText value="#{user.inicio}" styleClass="table1"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Término</f:facet>
+						<h:outputText value="#{user.termino}" styleClass="table1"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Editar</f:facet>
+						<h:link class="larguraBotaoSb" outcome="/Admin/cadastroTurma"
+							value="Editar">
+							<f:param name="id" value="#{user.id}" />
+						</h:link>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Excluir</f:facet>
+						<h:commandLink
+							onclick="return confirm('Tem certeza da exclusão do usuário #{user.nomeTurma}');"
+							class="larguraBotaoSb"
+							action="#{turmaMb.excluir(user.id)}" value="Excluir" />
+					</h:column>
+
+				</h:dataTable>
+			</h:form>
+		</div>
+		<div class="col-xs-12 col-sm-1"></div>
+
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<f:metadata>
+	<f:viewParam name="id" value="#{turmaMb.editarId}" />
+	<f:event listener="#{turmaMb.carregarEdicao}" type="preRenderView" />
+</f:metadata>
+
+<ui:composition template="/WEB-INF/template/padraoAdmin.xhtml">
+	<ui:define name="conteudo">
+
+		<div id="titulo">
+			<h1>Cadastro de Turmas TKS</h1>
+		</div>
+
+		<div class="col-xs-12 col-sm-1"></div>
+		<div class="col-xs-12 col-sm-10" id="formulario">
+			<h:form>
+				<div class="espaco"></div>
+				<div class="col-xs-12 col-sm-12">
+					<h3>Dados da turma</h3>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<h:panelGroup rendered="#{not empty turmaMb.turma.id}">
+						<div class="form-group id">
+							<label>ID</label>
+							<h:inputText styleClass="form-control" readonly="true"
+								value="#{turmaMb.turma.id}" />
+						</div>
+					</h:panelGroup>
+					<h:inputHidden value="#{turmaMb.turma.id}" />
+
+					<div class="form-group">
+						<label for="exampleInputNome">Nome da turma:</label>
+						<h:inputText styleClass="form-control"
+							value="#{turmaMb.turma.nomeTurma }" id="exampleInputNome" />
+					</div>
+
+					<div class="form-group">
+						<label>Professor</label>
+						<h:selectOneMenu styleClass="form-control"
+							value="#{turmaMb.turma.professor}">
+							<f:selectItem itemLabel="Selecione o professor" />
+							<f:selectItems value="#{usuarioMb.listaProfessores}"
+								var="professor" itemLabel="#{professor.nome}"
+								itemValue="#{professor}" />
+						</h:selectOneMenu>
+					</div>
+
+					<div class="form-group">
+						<label for="exampleInputNome">Turno:</label>
+						<h:inputText styleClass="form-control"
+							value="#{turmaMb.turma.turno }" id="exampleInputTurno" />
+					</div>
+
+
+					<div class="form-group">
+						<label>Inicio</label>
+						<div class='input-group date datetimepicker'>
+							<h:inputText styleClass="form-control"
+								value="#{turmaMb.turma.inicio}">
+								<f:convertDateTime pattern="dd/MM/yyyy" />
+							</h:inputText>
+							<span class="input-group-addon"> <span
+								class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label>Termino</label>
+						<div class="input-group date datetimepicker">
+							<h:inputText styleClass="form-control"
+								value="#{turmaMb.turma.termino}">
+								<f:convertDateTime pattern="dd/MM/yyyy" />
+							</h:inputText>
+							<span class="input-group-addon"> <span
+								class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label>Valor</label>
+						<h:inputText styleClass="form-control"
+							value="#{turmaMb.turma.valor}" />
+					</div>
+
+
+				</div>
+
+				<div class="col-xs-12 col-sm-6">
+
+					<fieldset>
+						<div class="row">
+							<div class="col-sm-12">
+								<label>Alunos</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-10">
+								<h:selectOneMenu id="uiSelecionaAluno" styleClass="form-control"
+									value="#{turmaMb.alunoSelecionado}">
+									<f:selectItem itemLabel="Selecione os alunos"
+										noSelectionOption="true" />
+									<f:selectItems value="#{usuarioMb.listaAluno}" var="alu"
+										itemLabel="#{alu.nome}" itemValue="#{alu}" />
+								</h:selectOneMenu>
+							</div>
+
+							<div class="col-sm-2">
+								<h:commandLink styleClass="btn btn-success">
+									<f:ajax event="click" execute="uiSelecionaAluno"
+										listener="#{turmaMb.adicionarAluno}"
+										render="uiAlunoTurma uiSelecionaAluno" />
+									<span class="glyphicon glyphicon-plus"></span>
+								</h:commandLink>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-10">
+								<h:dataTable styleClass="table" id="uiAlunoTurma"
+									value="#{turmaMb.turma.alunosTurma}" var="aluno">
+
+									<h:column>
+										<f:facet name="header">Nome</f:facet>
+										<h:outputText value="#{aluno.nome}" styleClass="table1" />
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">controle</f:facet>
+										<h:commandLink>
+											<f:attribute name="idAluno" value="#{aluno}" />
+											<f:ajax event="click" execute="@form" render="@form"
+												listener="#{turmaMb.excluirAluno}" />
+											<span class="glyphicon glyphicon-remove-circle"></span>
+										</h:commandLink>
+									</h:column>
+
+								</h:dataTable>
+							</div>
+							<div class="col-sm-2"></div>
+						</div>
+					</fieldset>
+				</div>
+
+				<div class="col-xs-12 col-sm-12">
+					<div class="col-xs-12 col-sm-6"></div>
+					<div class="col-xs-12 col-sm-6">
+						<div class="col-xs-12 col-sm-6">
+							<h:commandButton action="#{turmaMb.salvar}" value="Salvar"
+								styleClass="larguraBotaoSb1" />
+						</div>
+						<div class="col-xs-12 col-sm-6">
+							<button type="reset" class="larguraBotaoSb1">Restaurar</button>
+						</div>
+					</div>
+
+
+				</div>
+				<div class="espaco"></div>
+			</h:form>
+		</div>
+		<h:outputScript name="/js/datepicker-component.js" />
+	</ui:define>
+</ui:composition>
+</html>
