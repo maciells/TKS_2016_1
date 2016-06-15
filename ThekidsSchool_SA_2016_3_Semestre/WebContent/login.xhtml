@@ -5,17 +5,9 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-<f:metadata>
-	<f:viewParam name="id" value="#{turmaMb.editarId}" />
-	<f:event listener="#{turmaMb.carregarEdicao}" type="preRenderView" />
-</f:metadata>
 
 <ui:composition template="/WEB-INF/template/padraoInstitucional.xhtml">
 	<ui:define name="conteudo">
-
-
-
-
 		<div id="imgTituloDaPagina">
 			<div id="divImagemTituloPagina" class="animated bounceInLeft">
 				<h:graphicImage name="img/iconeLogin.png" id="imgTp" />
@@ -60,11 +52,11 @@
 					<div class="form-group, formEnviaDados">
 						<div class="col-xs-12 col-sm-2"></div>
 						<div class="col-xs-12 col-sm-5">
-							<h:commandButton styleClass="larguraBotaoSb1" value="Entrar"
+							<h:commandButton styleClass="larguraBotaoSb1 pp" value="Entrar"
 								action="#{sessaoMb.entrar}" />
 						</div>
 						<div class="col-xs-12 col-sm-5">
-							<button type="reset" class="larguraBotaoSb1">Restaurar</button>
+							<button type="reset" class="larguraBotaoSb1 pp">Restaurar</button>
 						</div>
 					</div>
 				</div>

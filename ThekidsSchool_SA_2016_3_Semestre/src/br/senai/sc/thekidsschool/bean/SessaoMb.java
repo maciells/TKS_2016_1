@@ -9,8 +9,6 @@ import br.senai.sc.thekidsschool.model.Perfil;
 import br.senai.sc.thekidsschool.model.Usuario;
 import br.senai.sc.thekidsschool.rn.UsuarioRN;
 
-
-
 @SessionScoped
 @ManagedBean
 public class SessaoMb {
@@ -35,39 +33,52 @@ public class SessaoMb {
 		this.emailForm = emailForm;
 	}
 
-	public boolean estaLogado(){
+	public boolean estaLogado() {
 		return usuarioLogado != null;
 	}
-	
-	
-	
-	
-	public boolean ehAdmin(){
+
+	public boolean ehAdmin() {
 		return usuarioLogado != null && usuarioLogado.getPerfil().equals(Perfil.ADMINISTRADOR);
 	}
-	
-	public String getNomeUsuarioLogato(){
+
+	public boolean ehProf() {
+		return usuarioLogado != null && usuarioLogado.getPerfil().equals(Perfil.PROFESSOR);
+	}
+
+	public boolean ehAluno() {
+		return usuarioLogado != null && usuarioLogado.getPerfil().equals(Perfil.ALUNO);
+	}
+
+	public String getNomeUsuarioLogato() {
 		return usuarioLogado == null ? "" : usuarioLogado.getNome();
 	}
-	
-	public String sair(){
+
+	public String sair() {
 		usuarioLogado = null;
 		return "/index?faces-redirect=true";
 	}
-	
-	public String entrar(){
+
+	public String entrar() {
 		UsuarioRN usuarioRN = new UsuarioRN();
-		Usuario usuario = usuarioRN.buscarPorEmail(emailForm);
-		
-		if(usuario == null ||
-				!usuario.getEmail().equalsIgnoreCase(emailForm) ||
-				!usuario.getSenha().equals(senhaForm)){
-			FacesContext.getCurrentInstance().addMessage(null, 
-					new FacesMessage("E-mail ou senha não confere."));
-			return "";
+
+		if (emailForm != null && !emailForm.isEmpty() && senhaForm != null && !senhaForm.isEmpty()) {
+
+			Usuario usuario = usuarioRN.buscarPorEmail(emailForm);
+
+			if (usuario != null && usuario.getEmail().equalsIgnoreCase(emailForm)
+					&& usuario.getSenha().equals(senhaForm)) {
+				usuarioLogado = usuario;
+				if (usuarioLogado.getPerfil().equals(Perfil.ADMINISTRADOR)) {
+					return "/Admin/homeAdmin?faces-redirect=true";
+				} else if (usuarioLogado.getPerfil().equals(Perfil.PROFESSOR)) {
+					return "/Prof/homeProf?faces-redirect=true";
+				} else if (usuarioLogado.getPerfil().equals(Perfil.ALUNO)) {
+					return "/Aluno/homeAluno?faces-redirect=true";
+				}
+			}
 		}
-		
-		usuarioLogado = usuario;
-		return "/Admin/homeAdmin?faces-redirect=true";
+		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("E-mail ou senha não confere."));
+		return "";
+
 	}
 }

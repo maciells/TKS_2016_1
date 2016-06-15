@@ -16,8 +16,8 @@ import br.senai.sc.thekidsschool.bean.SessaoMb;
 
 
 
-@WebFilter(urlPatterns="/Admin/*")
-public class SessaoFilter implements Filter {
+@WebFilter(urlPatterns="/Aluno/*")
+public class SessaoAlunoFilter implements Filter {
 
 	@Override
 	public void destroy() {}
@@ -29,7 +29,7 @@ public class SessaoFilter implements Filter {
 		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
 		SessaoMb sessaoMb = (SessaoMb) httpServletRequest.getSession().getAttribute("sessaoMb"); 
 		
-		if(sessaoMb == null || !sessaoMb.ehAdmin()){
+		if(sessaoMb == null || !sessaoMb.ehAluno()){
 			HttpServletResponse httpServletResponse = (HttpServletResponse) response;
 			httpServletResponse.sendRedirect(
 					httpServletRequest.getContextPath().concat("/login.xhtml?msg=Acesso restrito."));

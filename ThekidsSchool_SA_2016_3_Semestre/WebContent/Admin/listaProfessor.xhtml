@@ -32,7 +32,7 @@
 					</h:column>
 					<h:column>
 						<f:facet name="header">Editar</f:facet>
-						<h:link class="larguraBotaoSb" outcome="Admin/cadastroUsuario"
+						<h:link styleClass="larguraBotaoSb pp" outcome="Admin/cadastroUsuario"
 							value="Editar">
 							<f:param name="id" value="#{user.id}" />
 						</h:link>
@@ -41,7 +41,7 @@
 						<f:facet name="header">Excluir</f:facet>
 						<h:commandLink
 							onclick="return confirm('Tem certeza da exclusão do usuário #{user.nome}');"
-							class="larguraBotaoSb"
+							styleClass="larguraBotaoSb pp"
 							action="#{usuarioMb.excluir(user.id)}" value="Excluir" />
 					</h:column>
 
