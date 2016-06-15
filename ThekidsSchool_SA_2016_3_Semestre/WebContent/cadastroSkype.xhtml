@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<f:metadata>
+	<f:viewParam name="id" value="#{skypeMb.editarId}" />
+	<f:event listener="#{skypeMb.carregarSkype}" type="preRenderView" />
+</f:metadata>
+
+
+<ui:composition template="/WEB-INF/template/padraoInstitucional.xhtml">
+	<ui:define name="conteudo">
+		<div id="imgTituloDaPagina">
+			<div id="divImagemTituloPagina" class="animated bounceInLeft">
+				<h:graphicImage name="img/iconeLogin.png" id="imgTp" />
+			</div>
+		</div>
+
+		<div id="titulo">
+			<h1>Skype TKS</h1>
+		</div>
+		<div class="col-xs-12 col-sm-1"></div>
+		<div class="col-xs-12 col-sm-5">
+		</div>
+
+
+		<div class="col-xs-12 col-sm-5" id="formulario">
+			<h:form>
+				<div id="hugoLogin"></div>
+
+				<div class="formDados1">
+					<div class="form-group">
+					
+					<label for="exampleInputNome">Nome:</label>
+						<h:inputText styleClass="form-control"
+							value="#{skypeMb.skype.nomeSkype }" id="exampleInputNome" >   
+							<f:passThroughAttribute name="placeholder" value="Nome" />
+							</h:inputText>
+					</div>
+					<div class="form-group">
+					<label for="exampleInputNome">Skype:</label>
+						<h:inputText styleClass="form-control"
+							value="#{skypeMb.skype.email}" id="exampleInputSkype" >   
+							<f:passThroughAttribute name="placeholder" value="Skype" />
+							</h:inputText>
+					</div>
+
+
+					<div class="form-group, formEnviaDados">
+
+
+						<div class="col-xs-12 col-sm-2"></div>
+						<div class="col-xs-12 col-sm-5">
+
+
+							<h:commandButton styleClass="larguraBotaoSb1" value="Salvar"
+								action="#{skypeMb.salvar}" />
+						</div>
+						<div class="col-xs-12 col-sm-5">
+
+
+							<button type="reset" class="larguraBotaoSb1">Restaurar</button>
+						</div>
+					</div>
+				</div>
+			</h:form>
+		</div>
+		<div class="col-xs-12 col-sm-1"></div>
+	</ui:define>
+</ui:composition>
+
+</html>
