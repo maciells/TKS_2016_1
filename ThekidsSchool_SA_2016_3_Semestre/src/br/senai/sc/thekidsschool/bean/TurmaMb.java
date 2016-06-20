@@ -25,6 +25,8 @@ public class TurmaMb {
 	private TurmaRN turmaRN;
 	private Long editarId;
 	private Usuario alunoSelecionado;
+	private List<Turma> listaTurmaProfessor;
+	
 	
 
 	@PostConstruct
@@ -32,6 +34,7 @@ public class TurmaMb {
 		turmaRN	= new TurmaRN();
 		turma = new Turma();
 		turma.setAlunosTurma(new ArrayList<Usuario>());
+		
 }
 
 	public List<Turma> getListaTurma() {
@@ -70,6 +73,17 @@ public class TurmaMb {
 		this.alunoSelecionado = alunoSelecionado;
 	}
 	
+	public List<Turma> getListaTurmaProfessor() {
+		if(listaTurmaProfessor == null){
+			listaTurmaProfessor = turmaRN.listarTurmaProfessor();
+		}
+		return listaTurmaProfessor;
+	}
+
+	public void setListaTurmaProfessor(List<Turma> listaTurmaProfessor) {
+		this.listaTurmaProfessor = listaTurmaProfessor;
+	}
+
 	public void carregarTurma(ComponentSystemEvent event) {
 		if (editarId == null) {
 			return;

@@ -6,15 +6,15 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>br.senai.sc.thekidsschool.model.Usuario</class>
 		<class>br.senai.sc.thekidsschool.model.Turma</class>
-		
-		
-		
+		<class>br.senai.sc.thekidsschool.model.Skype</class>
+		<class>br.senai.sc.thekidsschool.model.Pergunta</class>
+		<class>br.senai.sc.thekidsschool.model.Resposta</class>
 		<properties>
 			<!-- dados da conexao -->
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/thekidsschool_jdbc_3_semestre" />
 			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password" value="" />
+			<property name="javax.persistence.jdbc.password" value="maciells" />
 
 			<!-- propriedades do hibernate -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />

@@ -52,6 +52,10 @@ public class SessaoMb {
 	public String getNomeUsuarioLogato() {
 		return usuarioLogado == null ? "" : usuarioLogado.getNome();
 	}
+	
+	public Long getNomeUsuarioLogatoId() {
+		return usuarioLogado == null ? null : usuarioLogado.getId();
+	}
 
 	public String sair() {
 		usuarioLogado = null;
@@ -77,7 +81,7 @@ public class SessaoMb {
 				}
 			}
 		}
-		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("E-mail ou senha n√£o confere."));
+		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("E-mail ou senha n„o confere."));
 		return "";
 
 	}

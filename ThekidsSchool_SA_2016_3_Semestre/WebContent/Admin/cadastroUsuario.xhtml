@@ -21,23 +21,33 @@
 
 		<div class="col-xs-12 col-sm-1"></div>
 		<div class="col-xs-12 col-sm-10" id="formulario">
+			<div class="col-xs-12 col-sm-12"></div>
+			
+			<div>
+				<h:messages errorStyle="color:red" styleClass="alerta" />
+			</div>
 			<h:form>
-
 				<div class="espaco"></div>
 				<div class="col-xs-12 col-sm-12">
 					<h3>Perfil</h3>
 				</div>
 
-				<div class="col-xs-12 col-sm-6">
+				<div class="col-xs-12 col-sm-12">
 					<div class="form-group">
 						<label for="exampleInputPerfil">Perfil</label>
-						<h:selectOneMenu styleClass="form-control"
-							value="#{usuarioMb.usuario.perfil}">
-							<f:selectItem itemLabel="Selecione o perfil" itemValue="" />
-							<f:selectItem itemLabel="Administrador" itemValue="ADMINISTRADOR" />
-							<f:selectItem itemLabel="Professor" itemValue="PROFESSOR" />
-							<f:selectItem itemLabel="Aluno" itemValue="ALUNO" />
-						</h:selectOneMenu>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon2"><span
+								class="glyphicon glyphicon-user"></span></span>
+							<h:selectOneMenu styleClass="form-control"
+								value="#{usuarioMb.usuario.perfil}" required="true"
+								requiredMessage="Por favor escolha um perfil">
+								<f:selectItem itemLabel="Selecione o perfil" itemValue="" />
+								<f:selectItem itemLabel="Administrador"
+									itemValue="ADMINISTRADOR" />
+								<f:selectItem itemLabel="Professor" itemValue="PROFESSOR" />
+								<f:selectItem itemLabel="Aluno" itemValue="ALUNO" />
+							</h:selectOneMenu>
+						</div>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6"></div>
@@ -52,15 +62,20 @@
 					<div class="form-group">
 						<label>Data de Inscrição</label>
 						<div class='input-group date datetimepicker'>
-							<h:inputText styleClass="form-control"
-								value="#{usuarioMb.usuario.dataInscricao}"
-								id="exampleInputDataInscricao">
-								<f:convertDateTime pattern="dd/MM/yyyy" />
-							</h:inputText>
 							<span class="input-group-addon"> <span
 								class="glyphicon glyphicon-calendar"></span>
 							</span>
+							<h:inputText styleClass="form-control"
+								value="#{usuarioMb.usuario.dataInscricao}"
+								id="exampleInputDataInscricao" required="true"
+								requiredMessage="Por favor preencha a data de inscrição">
+								<f:convertDateTime pattern="dd/MM/yyyy" />
+								<f:passThroughAttribute name="placeholder"
+									value="Data de Inscrição" />
+							</h:inputText>
+
 						</div>
+
 					</div>
 
 				</div>
@@ -68,8 +83,12 @@
 					<h:panelGroup rendered="#{not empty usuarioMb.usuario.id}">
 						<div class="form-group id">
 							<label for="exampleId">ID</label>
-							<h:inputText styleClass="form-control" readonly="true"
-								value="#{usuarioMb.usuario.id}" id="exampleId" />
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon2"><span
+									class="glyphicon glyphicon-unchecked"></span></span>
+								<h:inputText styleClass="form-control" readonly="true"
+									value="#{usuarioMb.usuario.id}" id="exampleId" />
+							</div>
 						</div>
 					</h:panelGroup>
 					<h:inputHidden value="#{usuarioMb.usuario.id}" />
@@ -78,27 +97,48 @@
 				<div class="col-xs-12 col-sm-6">
 					<div class="form-group">
 						<label for="exampleInputNome">Nome:</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.nome }" id="exampleInputNome" />
+						
+							<h:inputText styleClass="form-control"
+								value="#{usuarioMb.usuario.nome }" id="exampleInputNome"
+								required="true" label="nome"
+								requiredMessage="Por favor preencha seu nome completo">
+
+								<f:passThroughAttribute name="placeholder" value="Nome" />
+							</h:inputText>
+						
 					</div>
 					<div class="form-group">
 						<label for="exampleInputSexo">Sexo</label>
-						<h:selectOneMenu styleClass="form-control"
-							value="#{usuarioMb.usuario.sexo}">
-							<f:selectItem itemLabel="Selecione o sexo" itemValue="" />
-							<f:selectItem itemLabel="Masculino" itemValue="m" />
-							<f:selectItem itemLabel="Feminino" itemValue="f" />
-						</h:selectOneMenu>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon2"><span
+								class="glyphicon glyphicon-unchecked"></span></span>
+							<h:selectOneMenu styleClass="form-control"
+								value="#{usuarioMb.usuario.sexo}" required="true"
+								requiredMessage="Por favor escolha o sexo">
+								<f:selectItem itemLabel="Selecione o sexo" itemValue="" />
+								<f:selectItem itemLabel="Masculino" itemValue="m" />
+								<f:selectItem itemLabel="Feminino" itemValue="f" />
+							</h:selectOneMenu>
+						</div>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputNomeMae">Nome da Mãe</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.nomeMae }" id="exampleInputNomeMae" />
+						<h:inputText styleClass="form-control" label="Nome mãe"
+							value="#{usuarioMb.usuario.nomeMae }" id="exampleInputNomeMae"
+							requiredMessage="Por favor preencha o nome da mãe completo">
+							<f:passThroughAttribute name="placeholder" value="Nome da mãe" />
+							
+						</h:inputText>
+
+
 					</div>
 					<div class="form-group">
 						<label for="exampleInputCpf">CPF</label>
 						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.cpf }" id="exampleInputCpf" />
+							value="#{usuarioMb.usuario.cpf }" id="exampleInputCpf"
+							required="true" requiredMessage="Por favor preencha seu o CPF">
+							<f:passThroughAttribute name="placeholder" value="CPF" />
+						</h:inputText>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6">
@@ -106,30 +146,45 @@
 					<div class="form-group">
 						<label for="exampleInputIdade">Idade</label>
 						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.idade }" id="exampleInputIdade" />
+							value="#{usuarioMb.usuario.idade }" id="exampleInputIdade"
+							required="true" requiredMessage="Por favor informe a idade">
+							<f:passThroughAttribute name="placeholder" value="Idade" />
+						</h:inputText>
 					</div>
 					<div class="form-group">
 						<label>Data de Nascimento</label>
 						<div class='input-group date datetimepicker'>
-							<h:inputText styleClass="form-control"
-								value="#{usuarioMb.usuario.dataNascimento}"
-								id="exampleInputDataNascimento">
-								<f:convertDateTime pattern="dd/MM/yyyy" />
-							</h:inputText>
 							<span class="input-group-addon"> <span
 								class="glyphicon glyphicon-calendar"></span>
 							</span>
+
+							<h:inputText styleClass="form-control"
+								value="#{usuarioMb.usuario.dataNascimento}"
+								id="exampleInputDataNascimento" required="true"
+								requiredMessage="Por favor informe a data de nascimento">
+								<f:convertDateTime pattern="dd/MM/yyyy" />
+								<f:passThroughAttribute name="placeholder"
+									value="Data de Nascimento" />
+							</h:inputText>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputNomePai">Nome do Pai</label>
 						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.nomePai }" id="exampleInputNomePai" />
+							value="#{usuarioMb.usuario.nomePai }" id="exampleInputNomePai"
+							required="true"
+							requiredMessage="Por favor Informe o nome do pai completo">
+							<f:validateLength minimum="5" />
+							<f:passThroughAttribute name="placeholder" value="Nome do Pai" />
+						</h:inputText>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputRg">RG</label>
 						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.rg }" id="exampleInputRg" />
+							value="#{usuarioMb.usuario.rg }" id="exampleInputRg"
+							required="true" requiredMessage="Por favor informe o RG">
+							<f:passThroughAttribute name="placeholder" value="RG" />
+						</h:inputText>
 					</div>
 				</div>
 
@@ -139,16 +194,35 @@
 				</div>
 				<div class="col-xs-12 col-sm-6">
 					<div class="form-group">
-						<label for="exampleInputEmail">Email address</label>
-						<h:inputText styleClass="form-control" id="exampleInputEmail"
-							value="#{usuarioMb.usuario.email}" />
+						<label for="exampleInputEmail">Email</label>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon2"><span
+								class="glyphicon glyphicon-envelope"></span></span>
+							<h:inputText styleClass="form-control " id="exampleInputEmail"
+								value="#{usuarioMb.usuario.email}"
+								aria-describedby="basic-addon2" required="true"
+								requiredMessage="Por favor informe seu email">
+								<f:passThroughAttribute name="placeholder" value="Email" />
+							</h:inputText>
+
+						</div>
+
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6">
 					<div class="form-group">
 						<label for="exampleInputTelefone">Telefone</label>
-						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.telefone }" id="exampleInputTelefone" />
+						<div class="input-group">
+							<span class="input-group-addon"><span
+								class="glyphicon glyphicon-phone-alt"></span></span>
+
+							<h:inputText styleClass="form-control"
+								value="#{usuarioMb.usuario.telefone }" id="exampleInputTelefone"
+								required="true" requiredMessage="Por favor informe o telefone">
+								<f:passThroughAttribute name="placeholder" value="Telefone" />
+
+							</h:inputText>
+						</div>
 					</div>
 				</div>
 
@@ -164,51 +238,77 @@
 							logradouro</label>
 						<h:inputText styleClass="form-control"
 							value="#{usuarioMb.usuario.tipoLogradouro }"
-							id="exampleInputTipoLogradouro" />
+							id="exampleInputTipoLogradouro" required="true"
+							requiredMessage="Por favor informe o tipo de logradouro">
+							<f:passThroughAttribute name="placeholder"
+								value="Tipo de Logradouro" />
+						</h:inputText>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputNumero">Numero</label>
 						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.numero }" id="exampleInputNumero" />
+							value="#{usuarioMb.usuario.numero }" id="exampleInputNumero"
+							required="true" requiredMessage="Por favor informe o numero">
+							<f:passThroughAttribute name="placeholder" value="Logradouro" />
+
+						</h:inputText>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputNomeCidade">Cidade</label>
 						<h:inputText styleClass="form-control"
 							value="#{usuarioMb.usuario.nomeCidade }"
-							id="exampleInputNomeCidade" />
+							id="exampleInputNomeCidade" required="true"
+							requiredMessage="Por favor informe a cidade">
+							<f:passThroughAttribute name="placeholder" value="Cidade" />
+						</h:inputText>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputSiglaEstado"> UF</label>
 						<h:inputText styleClass="form-control"
 							value="#{usuarioMb.usuario.siglaEstado }"
-							id="exampleInputSiglaEstado" />
+							id="exampleInputSiglaEstado"   required="true"
+							requiredMessage="Por favor informe a UF">
+							<f:passThroughAttribute name="placeholder" value="UF" />
+						</h:inputText>
 					</div>
 				</div>
 
 
-				<div class="col-xs-12 col-sm-6">
+				<div class="col-xs-12 col-sm-6">  
 					<div class="form-group">
 						<label for="exampleInputNomeLogradouro">Logradouro</label>
 						<h:inputText styleClass="form-control"
 							value="#{usuarioMb.usuario.nomeLogradouro }"
-							id="exampleInputNomeLogradouro" />
+							id="exampleInputNomeLogradouro" required="true"
+							requiredMessage="Por favor informe o logradouro">
+							<f:passThroughAttribute name="placeholder" value="Logradouro" />
+						</h:inputText>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputNomeBairro">Bairro</label>
 						<h:inputText styleClass="form-control"
 							value="#{usuarioMb.usuario.nomeBairro }"
-							id="exampleInputNomeBairro" />
+							id="exampleInputNomeBairro"  required="true"
+							requiredMessage="Por favor informe o bairro">
+							<f:passThroughAttribute name="placeholder" value="Bairro" />
+						</h:inputText>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputNomeEstado">Estado</label>
 						<h:inputText styleClass="form-control"
 							value="#{usuarioMb.usuario.nomeEstado }"
-							id="exampleInputNomeEstado" />
+							id="exampleInputNomeEstado"  required="true"
+							requiredMessage="Por favor informe a cidade">
+							<f:passThroughAttribute name="placeholder" value="Estado" />
+						</h:inputText>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputCep">CEP</label>
 						<h:inputText styleClass="form-control"
-							value="#{usuarioMb.usuario.cep }" id="exampleInputCep" />
+							value="#{usuarioMb.usuario.cep }" id="exampleInputCep"  required="true"
+							requiredMessage="Por favor informe o CPF">
+							<f:passThroughAttribute name="placeholder" value="CEP" />
+						</h:inputText>
 					</div>
 				</div>
 
@@ -220,7 +320,10 @@
 					<div class="form-group">
 						<label for="exampleInputSenha">Senha</label>
 						<h:inputSecret styleClass="form-control" id="exampleInputSenha"
-							value="#{usuarioMb.usuario.senha}" />
+							value="#{usuarioMb.usuario.senha}"  required="true"
+							requiredMessage="Por favor informe a senha">
+							<f:passThroughAttribute name="placeholder" value="Senha" />
+						</h:inputSecret>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6">
@@ -228,7 +331,10 @@
 						<label for="exampleInputRepitaSenha">Repita a Senha</label>
 						<h:inputSecret styleClass="form-control"
 							id="exampleInputRepitaSenha"
-							value="#{usuarioMb.usuario.repitaSenha}" />
+							value="#{usuarioMb.usuario.repitaSenha}" required="true"
+							requiredMessage="Por favor informe o repita senha">
+							<f:passThroughAttribute name="placeholder" value="Repita Senha" />
+						</h:inputSecret>
 					</div>
 				</div>
 
@@ -237,18 +343,18 @@
 				<div class="col-xs-12 col-sm-6">
 					<div class="col-xs-12 col-sm-6">
 						<h:commandButton action="#{usuarioMb.salvar}" value="Salvar"
-							styleClass="larguraBotaoSb1 pp"  onSubmit="return alert('Salvo com sucesso')"/>
-					</div> 
+							styleClass="larguraBotaoSb1 pp"
+							onSubmit="return alert('Salvo com sucesso')" />
+					</div>
 					<div class="col-xs-12 col-sm-6">
 						<button type="reset" class="larguraBotaoSb1 pp">Restaurar</button>
-					</div>  
+					</div>
 
 
 
 				</div>
 
 				<div class="espaco"></div>
-
 			</h:form>
 		</div>
 		<h:outputScript name="/js/datepicker-component.js" />

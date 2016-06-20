@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<f:metadata>
+	<f:viewParam name="id" value="#{perguntaMb.editarId}" />
+	<f:event listener="#{perguntaMb.carregarEdicao}" type="preRenderView" />
+</f:metadata>
+
+<ui:composition template="/WEB-INF/template/padraoProf.xhtml">
+	<ui:define name="conteudo">
+		<div id="imgTituloDaPagina">
+			<div id="divImagemTituloPagina" class="animated bounceInLeft">
+				<h:graphicImage value="/resources/img/iconeCadastro.png" id="imgTp" />
+			</div>
+		</div>
+		<div id="titulo">
+			<h1>Cadastro de Questão e opções de respostas TKS</h1>
+		</div>
+		<div class="col-xs-12 col-sm-1"></div>
+		<div class="col-xs-12 col-sm-10" id="formulario">
+			<h:form>
+				<div class="espaco"></div>
+				<div class="col-xs-12 col-sm-12">
+					<h:panelGroup rendered="#{not empty perguntaMb.pergunta.id}">
+						<div class="form-group id">
+							<label for="exampleId"></label>
+							<h:inputHidden styleClass="form-control" readonly="true"
+								value="#{perguntaMb.pergunta.id}" id="exampleId" />
+						</div>
+					</h:panelGroup>
+					<h:inputHidden value="#{perguntaMb.pergunta.id}" />
+
+					<div class="form-group">
+						<label for="exampleInputNome">Descrição da Pergunta:</label>
+						<h:inputText styleClass="form-control"
+							value="#{perguntaMb.pergunta.descricao}"
+							id="exampleInputDescricao">
+							<f:passThroughAttribute name="placeholder"
+								value="Informe sua pergunta" />
+						</h:inputText>
+					</div>
+
+					<div class="form-group">
+						<label>Resposta 1</label>
+						<div class="input-group">
+							<span class="input-group-addon"> <h:selectManyCheckbox>
+									<f:selectItem value="#{perguntaMb.resposta1.correta}"/>
+								</h:selectManyCheckbox>
+							</span>
+							<h:inputText styleClass="form-control"
+								value="#{perguntaMb.resposta1.descricao}"
+								id="exampleInputResposta1">
+								<f:passThroughAttribute name="placeholder"
+									value="Informe sua primeira opção de resposta" />
+							</h:inputText>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label>Resposta 2</label>
+						<div class="input-group">
+							<span class="input-group-addon"> <h:selectManyCheckbox>
+									<f:selectItem value="#{perguntaMb.resposta2.correta}"/>
+								</h:selectManyCheckbox>
+							</span>
+							<h:inputText styleClass="form-control"
+								value="#{perguntaMb.resposta2.descricao}"
+								id="exampleInputResposta2">
+								<f:passThroughAttribute name="placeholder"
+									value="Informe sua segunda opção de resposta" />
+							</h:inputText>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label>Resposta 3</label>
+						<div class="input-group">
+							<span class="input-group-addon"> <h:selectManyCheckbox>
+									<f:selectItem value="#{perguntaMb.resposta3.correta}"/>
+								</h:selectManyCheckbox>
+							</span>
+							<h:inputText styleClass="form-control"
+								value="#{perguntaMb.resposta3.descricao}"
+								id="exampleInputResposta3">
+								<f:passThroughAttribute name="placeholder"
+									value="Informe sua terceira opção de resposta" />
+							</h:inputText>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label>Resposta 4</label>
+						<div class="input-group">
+							<span class="input-group-addon"> <h:selectManyCheckbox>
+									<f:selectItem value="#{perguntaMb.resposta4.correta}"/>
+								</h:selectManyCheckbox>
+							</span>
+							<h:inputText styleClass="form-control"
+								value="#{perguntaMb.resposta4.descricao}"
+								id="exampleInputResposta4">
+								<f:passThroughAttribute name="placeholder"
+									value="Informe sua quarta opção de resposta" />
+							</h:inputText>
+						</div>
+					</div>
+					
+
+
+					<div class="espaco"></div>
+					<div class="col-xs-12 col-sm-12">
+						<div class="col-xs-12 col-sm-6"></div>
+						<div class="col-xs-12 col-sm-6">
+							<div class="col-xs-12 col-sm-6">
+								<h:commandButton action="#{pergunta.salvar}" value="Salvar"
+									styleClass="larguraBotaoSb1 pp" />
+							</div>
+							<div class="col-xs-12 col-sm-6">
+								<button type="reset" class="larguraBotaoSb1 pp">Restaurar</button>
+							</div>
+						</div>
+
+
+					</div>
+					<div class="espaco"></div>
+				</div>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

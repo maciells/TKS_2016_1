@@ -5,6 +5,7 @@ import java.util.List;
 import br.senai.sc.thekidsschool.dao.TurmaDAO;
 import br.senai.sc.thekidsschool.model.Perfil;
 import br.senai.sc.thekidsschool.model.Turma;
+import br.senai.sc.thekidsschool.model.Usuario;
 
 public class TurmaRN {
 	
@@ -35,5 +36,9 @@ public class TurmaRN {
 	
 	public Turma buscarPorId(Long id) {
 		return dao.buscarPorId(id);
+	}
+
+	public List<Turma> listarTurmaProfessor() {
+		return dao.listaTurmaProfessor();
 	}
 }

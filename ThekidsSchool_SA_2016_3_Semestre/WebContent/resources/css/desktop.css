@@ -639,6 +639,21 @@ h3{
 	font-family: none;
 	
 }
+
+
+.alerta{
+	margin-top: 2%;
+	font-family: none;
+	font-size: 1.2em;
+	color: red
+	
+}
+
+.estilo1{
+	color: white;
+	margin-bottom: 15%;
+	
+}
 #formulario { /*div que abriga o formulario*/
 	
 	height: auto;

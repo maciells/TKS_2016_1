@@ -9,19 +9,27 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 
 @Entity
+
 public class Usuario implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	private Long id;
 	@Enumerated(EnumType.STRING)
 	private Perfil perfil;
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataInscricao;
 	private String nome;
 	private int idade;
 	private String sexo;
+	@Temporal(TemporalType.DATE)
 	private Date dataNascimento;
 	private String nomeMae;
 	private String nomePai;

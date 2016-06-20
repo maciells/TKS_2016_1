@@ -19,19 +19,22 @@
 		</div>
 		<div class="col-xs-12 col-sm-1"></div>
 		<div class="col-xs-12 col-sm-5">
-			<h:panelGroup rendered="#{not empty param.msg}">
-				<div class="alert alert-danger">
-					<h:outputText value="#{param.msg}" />
-				</div>
-			</h:panelGroup>
-			<h:messages styleClass="alert alert-warning"></h:messages>
+			<div class="estilo1">
+				<span><h3>Digite seu email e senha para entrar</h3></span>
+			</div>
+			
 		</div>
 
 
 		<div class="col-xs-12 col-sm-5" id="formulario">
 			<h:form>
 				<div id="hugoLogin"></div>
-
+				<h:panelGroup rendered="#{not empty param.msg}">
+				<div>
+					<h:outputText value="#{param.msg}" />
+				</div>
+			</h:panelGroup>
+			<h:messages styleClass="alerta"></h:messages>
 				<div class="formDados1">
 					<div class="form-group">
 						<label for="inputEmail">Email</label>

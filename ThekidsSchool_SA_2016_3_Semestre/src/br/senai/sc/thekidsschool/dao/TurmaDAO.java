@@ -7,6 +7,7 @@ import javax.persistence.Query;
 
 import br.senai.sc.thekidsschool.commons.JpaUtil;
 import br.senai.sc.thekidsschool.model.Turma;
+import br.senai.sc.thekidsschool.model.Usuario;
 
 
 
@@ -35,6 +36,11 @@ public class TurmaDAO {
 	private EntityManager getEM() {
 		EntityManager em = JpaUtil.getEntityManager();
 		return em;
+	}
+
+	public List<Turma> listaTurmaProfessor() {
+		Query query = getEM().createQuery("From Turma  ", Turma.class);
+		return query.getResultList();	
 	}
 
 }
