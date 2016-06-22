@@ -1061,6 +1061,9 @@ h3{
 	border: none;
 	color: white;
 	text-decoration: none;
+	
+	
+	
 }
 
 .larguraBotaoSb1:hover {
@@ -1077,6 +1080,43 @@ h3{
 	color: white;
 	text-decoration: none;
 }
+
+.larguraBotaoSb2 {
+	
+	background-color: transparent;
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoAzul.png"); 
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	border: none;
+	color: white;
+	text-decoration: none;
+	
+	padding-left: 15px;
+	padding-right: 25px;
+	padding-top: 5px;
+	
+}
+
+.larguraBotaoSb2:hover {
+	width: 100%;
+	background-color: transparent;
+	background-image: url("#{facesContext.externalContext.requestContextPath}/resources/img/botaoPintadoVermelho.png"); 
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	-khtml-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	color: white;
+	text-decoration: none;
+}
+
 
 tr.linhaTabela:hover {
 	background-color: #DCDCDC;

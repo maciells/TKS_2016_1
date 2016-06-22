@@ -8,7 +8,7 @@
 
 <ui:composition template="/WEB-INF/template/padraoAdmin.xhtml">
 	<ui:define name="conteudo">
-	
+
 		<div id="titulo">
 			<h1>Lista de Administrador TKS</h1>
 		</div>
@@ -17,32 +17,43 @@
 		<div class="col-xs-12 col-sm-10" id="formulario">
 			<h:form>
 				<h:dataTable value="#{usuarioMb.listaAdministrador}" var="user"
-					styleClass="table">
+					styleClass="table table-striped">
 					<h:column>
 						<f:facet name="header">ID</f:facet>
-						<h:outputText value="#{user.id}" styleClass="table1"/>
+						<h:outputText value="#{user.id}" styleClass="table1" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Nome</f:facet>
-						<h:outputText value="#{user.nome}" styleClass="table1"/>
+						<h:outputText value="#{user.nome}" styleClass="table1" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Data da Inscrição</f:facet>
+						<h:outputText value="#{user.dataInscricao}" styleClass="table1" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Idade</f:facet>
+						<h:outputText value="#{user.idade}" styleClass="table1" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">CPF</f:facet>
-						<h:outputText value="#{user.cpf}" styleClass="table1"/>
+						<h:outputText value="#{user.cpf}" styleClass="table1" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Editar</f:facet>
-						<h:link styleClass="larguraBotaoSb pp" outcome="/Admin/cadastroUsuario"
-							value="Editar">
+						<h:link styleClass="larguraBotaoSb2 pp"
+							outcome="/Admin/cadastroUsuario">
 							<f:param name="id" value="#{user.id}" />
+							<span class="glyphicon glyphicon-pencil"></span>
 						</h:link>
 					</h:column>
 					<h:column>
 						<f:facet name="header">Excluir</f:facet>
 						<h:commandLink
 							onclick="return confirm('Tem certeza da exclusão do usuário #{user.nome}');"
-							styleClass="larguraBotaoSb pp"
-							action="#{usuarioMb.excluir(user.id)}" value="Excluir" />
+							styleClass="larguraBotaoSb2 pp"
+							action="#{usuarioMb.excluir(user.id)}"  >
+							<span class="glyphicon glyphicon-trash"></span>
+							</h:commandLink>
 					</h:column>
 
 				</h:dataTable>

@@ -17,51 +17,55 @@
 		<div class="col-xs-12 col-sm-10" id="formulario">
 			<h:form>
 				<h:dataTable value="#{turmaMb.listaTurma}" var="user"
-					styleClass="table">
+					styleClass="table table-striped">
 					<h:column>
 						<f:facet name="header">ID</f:facet>
-						<h:outputText value="#{user.id}" styleClass="table1"/>
+						<h:outputText value="#{user.id}" styleClass="table1" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Nome</f:facet>
-						<h:outputText value="#{user.nomeTurma}" styleClass="table1"/>
+						<h:outputText value="#{user.nomeTurma}" styleClass="table1" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Professor</f:facet>
-						<h:outputText value="#{user.professor.nome}" styleClass="table1"/>
+						<h:outputText value="#{user.professor.nome}" styleClass="table1" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Turno</f:facet>
-						<h:outputText value="#{user.turno}" styleClass="table1"/>
+						<h:outputText value="#{user.turno}" styleClass="table1" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Inicio</f:facet>
-						<h:outputText value="#{user.inicio}" styleClass="table1"/>
+						<h:outputText value="#{user.inicio}" styleClass="table1" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Término</f:facet>
-						<h:outputText value="#{user.termino}" styleClass="table1"/>
+						<h:outputText value="#{user.termino}" styleClass="table1" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Editar</f:facet>
-						<h:link styleClass="larguraBotaoSb pp" outcome="/Admin/cadastroTurma"
-							value="Editar">
+						<h:link styleClass="larguraBotaoSb2 pp"
+							outcome="/Admin/cadastroTurma" >
 							<f:param name="id" value="#{user.id}" />
+							<span class="glyphicon glyphicon-pencil"></span>
 						</h:link>
 					</h:column>
 					<h:column>
 						<f:facet name="header">Visualizar</f:facet>
-						<h:link styleClass="larguraBotaoSb pp" outcome="/Admin/visualizarTurma"
-							value="Visualizar">
+						<h:link styleClass="larguraBotaoSb2 pp"
+							outcome="/Admin/visualizarTurma">
 							<f:param name="id" value="#{user.id}" />
+							<span class="glyphicon glyphicon-search"></span>
 						</h:link>
 					</h:column>
 					<h:column>
 						<f:facet name="header">Excluir</f:facet>
 						<h:commandLink
 							onclick="return confirm('Tem certeza da exclusão do usuário #{user.nomeTurma}');"
-							styleClass="larguraBotaoSb pp"
-							action="#{turmaMb.excluir(user.id)}" value="Excluir" />
+							styleClass="larguraBotaoSb2 pp"
+							action="#{turmaMb.excluir(user.id)}"  >
+							<span class="glyphicon glyphicon-trash"></span>
+							</h:commandLink>
 					</h:column>
 
 				</h:dataTable>

@@ -38,7 +38,7 @@ public class TurmaRN {
 		return dao.buscarPorId(id);
 	}
 
-	public List<Turma> listarTurmaProfessor() {
-		return dao.listaTurmaProfessor();
+	public List<Turma> listarTurmaProfessor(Long usuarioLogado) {
+		return dao.listaTurmaProfessor(usuarioLogado);
 	}
 }

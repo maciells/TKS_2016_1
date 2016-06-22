@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<f:metadata>
+	<f:viewParam name="idTurma" value="#{albumMb.turma}" required="true"
+		requiredMessage="Clique no botão adicionar do album de uma escursão" />
+	<f:viewParam name="idImagem" value="#{albumMb.foto}" />
+</f:metadata>
+
+<ui:composition template="/WEB-INF/template/padraoProf.xhtml">
+	<ui:define name="conteudo">
+		<div id="imgTituloDaPagina">
+			<div id="divImagemTituloPagina" class="animated bounceInLeft">
+				<h:graphicImage name="img/iconeLogin.png" id="imgTp" />
+			</div>
+		</div>
+
+		<div id="titulo">
+			<h1>Imagens TKS</h1>
+		</div>
+		<div class="col-xs-12 col-sm-1"></div>
+		<div class="col-xs-12 col-sm-5">
+			<div class="estilo1">
+				<span><h3>Adicione um arquivo a lista da turma</h3> </span>
+			</div>
+
+		</div>
+
+
+
+		<div class="col-xs-12 col-sm-5" id="formulario">
+			<div class="espaco"></div>
+			<h:form enctype="multipart/form-data">
+				<h:panelGroup rendered="#{not empty albumMb.foto.id}">
+					<div class="form-group id">
+						<label>ID</label>
+						<h:inputText styleClass="form-control" readonly="true"
+							value="#{albumMb.foto.id}" />
+					</div>
+				</h:panelGroup>
+				<h:inputHidden value="#{albumMb.foto.id}" />
+				<h:inputHidden value="#{albumMb.foto.nome}" />
+				<h:inputHidden value="#{albumMb.turma}" />
+
+
+				<div class="form-group">
+					<h:inputFile styleClass="form-control"
+						value="#{albumMb.fotoUploaded}" />
+
+					<h:graphicImage rendered="#{not empty albumMb.foto.nome}"
+						styleClass="img-responsive"
+						name="img/uploads/#{albumMb.foto.nome}" />
+				</div>
+
+				
+
+
+				<div class="col-xs-12 col-sm-12">
+					<div class="col-xs-12 col-sm-2"></div>
+					<div class="col-xs-12 col-sm-5">
+						<h:commandButton action="#{albumMb.salvar}" value="Salvar"
+							styleClass="larguraBotaoSb1 pp" />
+					</div>
+					<div class="col-xs-12 col-sm-5">
+						<button type="reset" class="larguraBotaoSb1 pp">Restaurar</button>
+
+					</div>
+				</div>
+			</h:form>
+			<div class="espaco"></div>
+
+		</div>
+
+
+		<h:outputScript name="/js/datepicker-component.js" />
+	</ui:define>
+</ui:composition>
+</html>

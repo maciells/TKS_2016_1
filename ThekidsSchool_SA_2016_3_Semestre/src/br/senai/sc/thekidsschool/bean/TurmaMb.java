@@ -26,7 +26,7 @@ public class TurmaMb {
 	private Long editarId;
 	private Usuario alunoSelecionado;
 	private List<Turma> listaTurmaProfessor;
-	
+	private Usuario usuarioLogado; 
 	
 
 	@PostConstruct
@@ -73,17 +73,31 @@ public class TurmaMb {
 		this.alunoSelecionado = alunoSelecionado;
 	}
 	
-	public List<Turma> getListaTurmaProfessor() {
-		if(listaTurmaProfessor == null){
-			listaTurmaProfessor = turmaRN.listarTurmaProfessor();
+	public List<Turma> getListaTurmaProfessor(Long usuarioLogado) {
+		if(listaTurma == null){
+			listaTurmaProfessor = turmaRN.listarTurmaProfessor(usuarioLogado);
 		}
 		return listaTurmaProfessor;
 	}
 
+	
+	
 	public void setListaTurmaProfessor(List<Turma> listaTurmaProfessor) {
 		this.listaTurmaProfessor = listaTurmaProfessor;
 	}
 
+	public Long getUsuarioLogado() {
+		return usuarioLogado == null ? null: usuarioLogado.getId();
+	}
+
+	public void setUsuarioLogado(Usuario usuarioLogado) {
+		this.usuarioLogado = usuarioLogado;
+	}
+
+	
+	
+	
+	
 	public void carregarTurma(ComponentSystemEvent event) {
 		if (editarId == null) {
 			return;

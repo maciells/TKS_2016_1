@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+
+<ui:composition template="/WEB-INF/template/padraoAluno.xhtml">
+	<ui:define name="conteudo">
+		<div id="imgTituloDaPagina">
+			<div id="divImagemTituloPagina" class="animated bounceInLeft">
+				<h:graphicImage value="/resources/img/iconeCadastro.png" id="imgTp" />
+			</div>
+		</div>
+		<div id="titulo">
+			<h1>Arquivos da Turma</h1>
+		</div>
+
+		<div class="col-xs-12 col-sm-1"></div>
+		<div class="col-xs-12 col-sm-10" id="formulario">
+			<div class="espaco"></div>
+			<div class="col-xs-12 col-sm-12">
+				<h:link outcome="/Prof/enviarfoto" styleClass="larguraBotaoSb2 pp" value="Adicionar Aquivos">
+					<f:param name="idTurma" value="#{albumMb.turma.id}" />
+					
+				</h:link>
+			</div>
+			<div class="espaco"></div>
+			<div class="col-xs-12 col-sm-12">
+
+				<h:form>
+					<h:dataTable styleClass="table" value="#{albumMb.imagens}"
+						var="file">
+						<h:column>
+							<h:outputText value="#{file.data}" />
+
+							<h:graphicImage styleClass="img-thumbnail"
+								style="height:100px; width: 200px;"
+								name="img/uploads/#{file.nome}" />
+
+
+							<h:link styleClass="larguraBotaoSb2 pp"
+								outcome="/Prof/enviarfoto">
+								<f:param name="idimagem" value="#{file.id}" />
+								<f:param name="idTurma" value="#{albumMb.turma.id}" />
+
+								<span class="glyphicon glyphicon-pencil"></span>
+							</h:link>
+
+							<h:commandLink styleClass="larguraBotaoSb2 pp"
+								action="#{albumMb.excluir(file.id)}"
+								onclick="return confirm('Tem certeza da exclusão da foto: #{file.nome}')">
+								<f:ajax render="@form" />
+								<span class="glyphicon glyphicon-trash"></span>
+							</h:commandLink>
+
+						</h:column>
+					</h:dataTable>
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

@@ -16,44 +16,45 @@
 		<div class="col-xs-12 col-sm-1"></div>
 		<div class="col-xs-12 col-sm-10" id="formulario">
 			<h:form>
-				<h:dataTable value="#{turmaMb.listaTurmaProfessor}" var="user"
-					styleClass="table">
+				<h:dataTable
+					value="#{turmaMb.getListaTurmaProfessor(sessaoMb.nomeUsuarioLogatoId)}"
+					var="user" styleClass="table">
 					<h:column>
 						<f:facet name="header">ID</f:facet>
-						<h:outputText value="#{user.id}" styleClass="table1"/>
+						<h:outputText value="#{user.id}" styleClass="table1" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Nome</f:facet>
-						<h:outputText value="#{user.nomeTurma}" styleClass="table1"/>
+						<h:outputText value="#{user.nomeTurma}" styleClass="table1" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Professor</f:facet>
-						<h:outputText value="#{user.professor.nome}" styleClass="table1"/>
-					</h:column>
-					<h:column>
-						<f:facet name="header">Professor id</f:facet>
-						<h:outputText value="#{user.professor.id}" styleClass="table1"/>
+						<h:outputText value="#{user.professor.nome}" styleClass="table1" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Turno</f:facet>
-						<h:outputText value="#{user.turno}" styleClass="table1"/>
-					</h:column>
-					<h:column>
-						<f:facet name="header">Inicio</f:facet>
-						<h:outputText value="#{user.inicio}" styleClass="table1"/>
-					</h:column>
-					<h:column>
-						<f:facet name="header">Término</f:facet>
-						<h:outputText value="#{user.termino}" styleClass="table1"/>
+						<h:outputText value="#{user.turno}" styleClass="table1" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Visualizar</f:facet>
-						<h:link styleClass="larguraBotaoSb pp" 
-							value="Visualizar">
+						<h:link styleClass="larguraBotaoSb2 pp"
+							outcome="/Prof/visualizarTurma" >
 							<f:param name="id" value="#{user.id}" />
+							<span class="glyphicon glyphicon-search"></span>
 						</h:link>
-					</h:column>
 
+					</h:column>
+					<h:column>
+					<f:facet name="header">Arquivos</f:facet>
+						<span> <h:link outcome="/Prof/album"
+								title="Abrir album de arquivos" 
+								styleClass="larguraBotaoSb2 pp">
+								<f:param name="idTurma" value="#{user.id}" />
+								<span class="glyphicon glyphicon-list"></span>
+							</h:link>
+						</span>
+
+					</h:column>
 				</h:dataTable>
 			</h:form>
 		</div>

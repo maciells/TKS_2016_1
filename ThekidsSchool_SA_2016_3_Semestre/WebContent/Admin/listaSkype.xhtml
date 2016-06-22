@@ -17,36 +17,37 @@
 		<div class="col-xs-12 col-sm-10" id="formulario">
 			<h:form>
 				<h:dataTable value="#{skypeMb.listaSkype}" var="user"
-					styleClass="table">
-					<h:column >
+					styleClass="table table-striped">
+					<h:column>
 						<f:facet name="header">ID</f:facet>
-						<h:outputText value="#{user.id}" styleClass="table1"/>
+						<h:outputText value="#{user.id}" styleClass="table1" />
 					</h:column>
-					<h:column >
+					<h:column>
 						<f:facet name="header">Nome</f:facet>
-						<h:outputText value="#{user.nomeSkype}" styleClass="table1"/>
+						<h:outputText value="#{user.nomeSkype}" styleClass="table1" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Skype</f:facet>
-						<h:outputText value="#{user.email}" styleClass="table1"/>
+						<h:outputText value="#{user.email}" styleClass="table1" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Id Aluno</f:facet>
-						<h:outputText value="#{user.usuario.id}" styleClass="table1"/>
+						<h:outputText value="#{user.usuario.id}" styleClass="table1" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Editar</f:facet>
-						<h:link class="larguraBotaoSb" 
-							value="Editar">
+						<h:link class="larguraBotaoSb2 pp">
 							<f:param name="id" value="#{user.id}" />
+							<span class="glyphicon glyphicon-pencil"></span>
 						</h:link>
 					</h:column>
 					<h:column>
 						<f:facet name="header">Excluir</f:facet>
 						<h:commandLink
 							onclick="return confirm('Tem certeza da exclusão do usuário #{user.nomeSkype}');"
-							class="larguraBotaoSb"
-							action="#{skypeMb.excluir(user.id)}" value="Excluir" />
+							class="larguraBotaoSb2 pp" action="#{skypeMb.excluir(user.id)}" >
+							<span class="glyphicon glyphicon-trash"></span>
+							</h:commandLink>
 					</h:column>
 
 				</h:dataTable>
