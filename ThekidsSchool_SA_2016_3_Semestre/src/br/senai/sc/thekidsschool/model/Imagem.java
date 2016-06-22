@@ -13,9 +13,13 @@ public class Imagem {
 	@GeneratedValue
 	private Long id;
 	private String nome;
+	private String descricao;
 	private Date data;
 	@ManyToOne
 	private Turma turma;
+	@ManyToOne
+	private Usuario usuario;
+	
 
 	
 	
@@ -43,12 +47,29 @@ public class Imagem {
 		this.data = data;
 	}
 
+	
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
 	public Turma getTurma() {
 		return turma;
 	}
 
 	public void setTurma(Turma turma) {
 		this.turma = turma;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	

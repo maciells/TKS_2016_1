@@ -79,8 +79,6 @@ public class TurmaMb {
 		}
 		return listaTurmaProfessor;
 	}
-
-	
 	
 	public void setListaTurmaProfessor(List<Turma> listaTurmaProfessor) {
 		this.listaTurmaProfessor = listaTurmaProfessor;
@@ -94,10 +92,6 @@ public class TurmaMb {
 		this.usuarioLogado = usuarioLogado;
 	}
 
-	
-	
-	
-	
 	public void carregarTurma(ComponentSystemEvent event) {
 		if (editarId == null) {
 			return;

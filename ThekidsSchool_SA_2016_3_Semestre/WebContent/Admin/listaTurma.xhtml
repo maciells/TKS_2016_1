@@ -36,16 +36,20 @@
 					</h:column>
 					<h:column>
 						<f:facet name="header">Inicio</f:facet>
-						<h:outputText value="#{user.inicio}" styleClass="table1" />
+						<h:outputText value="#{user.inicio}" styleClass="table1">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
 					</h:column>
 					<h:column>
 						<f:facet name="header">Término</f:facet>
-						<h:outputText value="#{user.termino}" styleClass="table1" />
+						<h:outputText value="#{user.termino}" styleClass="table1">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
 					</h:column>
 					<h:column>
 						<f:facet name="header">Editar</f:facet>
 						<h:link styleClass="larguraBotaoSb2 pp"
-							outcome="/Admin/cadastroTurma" >
+							outcome="/Admin/cadastroTurma">
 							<f:param name="id" value="#{user.id}" />
 							<span class="glyphicon glyphicon-pencil"></span>
 						</h:link>
@@ -63,9 +67,9 @@
 						<h:commandLink
 							onclick="return confirm('Tem certeza da exclusão do usuário #{user.nomeTurma}');"
 							styleClass="larguraBotaoSb2 pp"
-							action="#{turmaMb.excluir(user.id)}"  >
+							action="#{turmaMb.excluir(user.id)}">
 							<span class="glyphicon glyphicon-trash"></span>
-							</h:commandLink>
+						</h:commandLink>
 					</h:column>
 
 				</h:dataTable>

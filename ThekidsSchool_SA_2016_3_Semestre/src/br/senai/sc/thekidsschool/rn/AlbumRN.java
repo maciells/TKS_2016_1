@@ -31,4 +31,8 @@ public class AlbumRN {
 		dao.excluir(imagem);
 	}
 
+	public List<Imagem> listaImagemUsuarioRN(Long usuarioLogado) {
+		return dao.listaImagemUsuarioDAO(usuarioLogado);
+	}
+
 }

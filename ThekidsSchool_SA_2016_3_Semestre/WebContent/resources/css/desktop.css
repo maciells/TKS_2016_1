@@ -639,7 +639,11 @@ h3{
 	font-family: none;
 	
 }
-
+.estilo2{
+	border: 3px solid #DCDCDC;
+	
+	
+}
 
 .alerta{
 	margin-top: 2%;

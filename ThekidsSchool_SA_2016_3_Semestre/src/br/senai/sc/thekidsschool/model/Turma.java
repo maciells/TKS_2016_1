@@ -25,7 +25,8 @@ public class Turma {
 	private Usuario professor;
 	@ManyToMany
 	private List <Usuario> alunosTurma;
-	
+	@ManyToOne
+	private Imagem imagem;
 
 	public Long getId() {
 		return id;
@@ -80,4 +81,12 @@ public class Turma {
 	public void setAlunosTurma(List<Usuario> alunosTurma) {
 		this.alunosTurma = alunosTurma;
 	}
+	public Imagem getImagem() {
+		return imagem;
+	}
+	public void setImagem(Imagem imagem) {
+		this.imagem = imagem;
+	}
+	
+	
 }

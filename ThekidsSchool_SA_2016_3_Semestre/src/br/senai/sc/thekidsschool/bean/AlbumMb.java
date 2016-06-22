@@ -11,6 +11,7 @@ import javax.servlet.http.Part;
 import br.senai.sc.thekidsschool.commons.UploadUtil;
 import br.senai.sc.thekidsschool.model.Imagem;
 import br.senai.sc.thekidsschool.model.Turma;
+import br.senai.sc.thekidsschool.model.Usuario;
 import br.senai.sc.thekidsschool.rn.AlbumRN;
 import br.senai.sc.thekidsschool.rn.TurmaRN;
 
@@ -26,8 +27,10 @@ public class AlbumMb {
 	
 	private Part fotoUploaded;
 	private List<Imagem> imagens;
+	private List<Imagem> listaImagemUsuario;
 	private AlbumRN albumRN;
 	private TurmaRN turmaRN;
+	
 
 	@PostConstruct
 	public void init() {
@@ -35,6 +38,7 @@ public class AlbumMb {
 		albumRN = new AlbumRN();
 		foto = new Imagem();
 		turma = new Turma();
+		
 	}
 
 	
@@ -49,6 +53,21 @@ public class AlbumMb {
 	public void setImagens(List<Imagem> imagens) {
 		this.imagens = imagens;
 	}
+
+	public List<Imagem> getListaImagemUsuario(Long usuarioLogado) {
+		if(listaImagemUsuario == null){
+			listaImagemUsuario = albumRN.listaImagemUsuarioRN(usuarioLogado);
+		}
+		return listaImagemUsuario;
+	}
+
+
+
+	public void setListaImagemUsuario(List<Imagem> listaImagemUsuario) {
+		this.listaImagemUsuario = listaImagemUsuario;
+	}
+
+
 
 	public Imagem getFoto() {
 		return foto;
@@ -98,6 +117,17 @@ public class AlbumMb {
 		this.turmaRN = turmaRN;
 	}
 
+	
+	
+
+
+
+	public List<Imagem> getListaImagemUsuario() {
+		return listaImagemUsuario;
+	}
+
+
+
 	public void load(){
 		if(turmaId != null){
 			Long id = Long.parseLong(turmaId);
@@ -121,6 +151,7 @@ public class AlbumMb {
 
 			foto.setNome(nome);
 			foto.setTurma(turma);
+			
 
 			albumRN.adicionar(foto);
 

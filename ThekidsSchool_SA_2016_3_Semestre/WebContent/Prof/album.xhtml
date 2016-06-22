@@ -26,9 +26,10 @@
 		<div class="col-xs-12 col-sm-10" id="formulario">
 			<div class="espaco"></div>
 			<div class="col-xs-12 col-sm-12">
-				<h:link outcome="/Prof/enviarfoto" styleClass="larguraBotaoSb2 pp" value="Adicionar Aquivos">
+				<h:link outcome="/Prof/enviarfoto" styleClass="larguraBotaoSb2 pp"
+					value="Adicionar Aquivos">
 					<f:param name="idTurma" value="#{albumMb.turma.id}" />
-					
+
 				</h:link>
 			</div>
 			<div class="espaco"></div>
@@ -37,30 +38,55 @@
 				<h:form>
 					<h:dataTable styleClass="table" value="#{albumMb.imagens}"
 						var="file">
+
 						<h:column>
-							<h:outputText value="#{file.data}" />
-
-							<h:graphicImage styleClass="img-thumbnail"
-								style="height:100px; width: 200px;"
-								name="img/uploads/#{file.nome}" />
-
-
-							<h:link styleClass="larguraBotaoSb2 pp"
-								outcome="/Prof/enviarfoto">
-								<f:param name="idimagem" value="#{file.id}" />
-								<f:param name="idTurma" value="#{albumMb.turma.id}" />
-
-								<span class="glyphicon glyphicon-pencil"></span>
-							</h:link>
-
-							<h:commandLink styleClass="larguraBotaoSb2 pp"
-								action="#{albumMb.excluir(file.id)}"
-								onclick="return confirm('Tem certeza da exclusão da foto: #{file.nome}')">
-								<f:ajax render="@form" />
-								<span class="glyphicon glyphicon-trash"></span>
-							</h:commandLink>
-
+							<f:facet name="header">Titulo</f:facet>
+							<h:outputText value="#{file.descricao}" styleClass="table1" />
 						</h:column>
+						<h:column>
+							<f:facet name="header">Data</f:facet>
+							<h:outputText value="#{file.data}" styleClass="table1">
+								<f:convertDateTime pattern="dd/MM/yyyy" />
+							</h:outputText>
+						</h:column>
+						
+
+						<h:column>
+							<f:facet name="header">Arquivo</f:facet>
+							<h:graphicImage styleClass="img-thumbnail"
+								style="height:100px; width: 300px;"
+								name="img/uploads/#{file.nome}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">Visualizar</f:facet>
+								<h:link styleClass="larguraBotaoSb2 pp"
+									outcome="/Prof/visualizarArquivo">
+									<f:param name="idImagem" value="#{file.id}" />
+									<f:param name="idTurma" value="#{albumMb.turma.id}" />
+
+									<span class="glyphicon glyphicon-search"></span>
+								</h:link>
+								</h:column>
+							<h:column>
+								<f:facet name="header">Editar</f:facet>
+								<h:link styleClass="larguraBotaoSb2 pp"
+									outcome="/Prof/enviarfoto">
+									<f:param name="idImagem" value="#{file.id}" />
+									<f:param name="idTurma" value="#{albumMb.turma.id}" />
+								
+									<span class="glyphicon glyphicon-pencil"></span>
+								</h:link>
+								</h:column>
+								<h:column>
+									<f:facet name="header">Excluir</f:facet>
+									<h:commandLink styleClass="larguraBotaoSb2 pp"
+										action="#{albumMb.excluir(file.id)}"
+										onclick="return confirm('Tem certeza da exclusão da foto: #{file.nome}')">
+										<f:ajax render="@form" />
+										<span class="glyphicon glyphicon-trash"></span>
+									</h:commandLink>
+
+								</h:column>
 					</h:dataTable>
 				</h:form>
 			</div>

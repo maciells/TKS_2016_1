@@ -18,7 +18,7 @@
 			<h:form>
 				<h:dataTable
 					value="#{turmaMb.getListaTurmaProfessor(sessaoMb.nomeUsuarioLogatoId)}"
-					var="user" styleClass="table">
+					var="user" styleClass="table table-striped">
 					<h:column>
 						<f:facet name="header">ID</f:facet>
 						<h:outputText value="#{user.id}" styleClass="table1" />
@@ -34,6 +34,12 @@
 					<h:column>
 						<f:facet name="header">Turno</f:facet>
 						<h:outputText value="#{user.turno}" styleClass="table1" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Inicio</f:facet>
+						<h:outputText value="#{user.inicio}" styleClass="table1">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
 					</h:column>
 					<h:column>
 						<f:facet name="header">Visualizar</f:facet>

@@ -6,6 +6,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import br.senai.sc.thekidsschool.model.Perfil;
+import br.senai.sc.thekidsschool.model.Turma;
 import br.senai.sc.thekidsschool.model.Usuario;
 import br.senai.sc.thekidsschool.rn.UsuarioRN;
 
@@ -16,6 +17,7 @@ public class SessaoMb {
 	private String emailForm;
 	private String senhaForm;
 	private Usuario usuarioLogado;
+	
 
 	public String getSenhaForm() {
 		return senhaForm;
@@ -57,6 +59,15 @@ public class SessaoMb {
 		return usuarioLogado == null ? null : usuarioLogado.getId();
 	}
 
+	
+	public Usuario getUsuarioLogado() {
+		return usuarioLogado;
+	}
+
+	public void setUsuarioLogado(Usuario usuarioLogado) {
+		this.usuarioLogado = usuarioLogado;
+	}
+
 	public String sair() {
 		usuarioLogado = null;
 		return "/index?faces-redirect=true";
@@ -82,7 +93,7 @@ public class SessaoMb {
 			}
 		}
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("E-mail ou senha não confere."));
-		return "";
+		return "/login?faces-redirect=true";
 
 	}
 }
